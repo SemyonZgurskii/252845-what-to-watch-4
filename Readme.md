@@ -1,7 +1,7 @@
 # Личный проект «Что посмотреть» [![Build status][travis-image]][travis-url]
 
 * Студент: [Семен Згурский](https://up.htmlacademy.ru/react/4/user/252845).
-* Наставник: `Неизвестно`.
+* Наставник: [Марк Коваленко](https://htmlacademy.ru/profile/id1434381).
 
 ---
 
