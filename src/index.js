@@ -11,5 +11,5 @@ const promoInfo = {
 
 ReactDOM.render(
     <App {...promoInfo} />,
-    document.querySelector(`#root`)
+    document.getElementById(`root`)
 );
