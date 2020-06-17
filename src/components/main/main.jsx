@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const Main = (props) => {
   const {title, genre, releaseDate} = props.promoInfo;
   const moviesNames = props.moviesNames;
+  const onMovieTitleClick = props.onMovieTitleClick;
 
   return (
     <>
@@ -108,7 +109,12 @@ const Main = (props) => {
                     <img src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg" alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175" />
                   </div>
                   <h3 className="small-movie-card__title">
-                    <a className="small-movie-card__link" href="movie-page.html">{movieName}</a>
+                    <a
+                      className="small-movie-card__link"
+                      href="#"
+                      // href="movie-page.html"
+                      onClick={onMovieTitleClick}
+                    >{movieName}</a>
                   </h3>
                 </article>
               );
@@ -145,7 +151,8 @@ Main.propTypes = {
     title: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,
     releaseDate: PropTypes.number.isRequired,
-  })
+  }),
+  onMovieTitleClick: PropTypes.func,
 };
 
 export default Main;
