@@ -111,8 +111,7 @@ const Main = (props) => {
                   <h3 className="small-movie-card__title">
                     <a
                       className="small-movie-card__link"
-                      href="#"
-                      // href="movie-page.html"
+                      href="movie-page.html"
                       onClick={onMovieTitleClick}
                     >{movieName}</a>
                   </h3>

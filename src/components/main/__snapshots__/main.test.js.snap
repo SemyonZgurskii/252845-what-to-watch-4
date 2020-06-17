@@ -275,7 +275,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="movie-page.html"
               onClick={[Function]}
             >
               Fantastic Beasts: The Crimes of Grindelwald
@@ -300,7 +300,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="movie-page.html"
               onClick={[Function]}
             >
               Bohemian Rhapsody
@@ -325,7 +325,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="movie-page.html"
               onClick={[Function]}
             >
               Macbeth
@@ -350,7 +350,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="movie-page.html"
               onClick={[Function]}
             >
               Aviator
@@ -375,7 +375,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="movie-page.html"
               onClick={[Function]}
             >
               We need to talk about Kevin
@@ -400,7 +400,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="movie-page.html"
               onClick={[Function]}
             >
               We need to talk about Kevin
@@ -425,7 +425,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="movie-page.html"
               onClick={[Function]}
             >
               Revenant
@@ -450,7 +450,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="movie-page.html"
               onClick={[Function]}
             >
               Johnny English
@@ -475,7 +475,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="movie-page.html"
               onClick={[Function]}
             >
               Shutter Island
@@ -500,7 +500,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="movie-page.html"
               onClick={[Function]}
             >
               Pulp Fiction
@@ -525,7 +525,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="movie-page.html"
               onClick={[Function]}
             >
               No Country for Old Men
@@ -550,7 +550,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="movie-page.html"
               onClick={[Function]}
             >
               Snatch
@@ -575,7 +575,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="movie-page.html"
               onClick={[Function]}
             >
               Moonrise Kingdom
@@ -600,7 +600,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="movie-page.html"
               onClick={[Function]}
             >
               Seven Years in Tibet
@@ -625,7 +625,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="movie-page.html"
               onClick={[Function]}
             >
               Midnight Special
@@ -650,7 +650,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="movie-page.html"
               onClick={[Function]}
             >
               War of the Worlds
@@ -675,7 +675,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="movie-page.html"
               onClick={[Function]}
             >
               Dardjeeling Limited
@@ -700,7 +700,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="movie-page.html"
               onClick={[Function]}
             >
               Orlando
@@ -725,7 +725,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="movie-page.html"
               onClick={[Function]}
             >
               Mindhunter
@@ -750,7 +750,7 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="movie-page.html"
               onClick={[Function]}
             >
               Midnight Special
