@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Main = (props) => {
+import MovieCard from '../movie-card/movie-card.jsx';
+
+function Main(props) {
   const {title, genre, releaseDate} = props.promoInfo;
-  const moviesNames = props.moviesNames;
+  const moviesData = props.moviesData;
   const onMovieTitleClick = props.onMovieTitleClick;
 
   return (
@@ -102,20 +104,13 @@ const Main = (props) => {
 
           <div className="catalog__movies-list">
 
-            {moviesNames.map((movieName, index) => {
+            {moviesData.map((movieData, index) => {
               return (
-                <article key={movieName + index} className="small-movie-card catalog__movies-card">
-                  <div className="small-movie-card__image">
-                    <img src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg" alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175" />
-                  </div>
-                  <h3 className="small-movie-card__title">
-                    <a
-                      className="small-movie-card__link"
-                      href="movie-page.html"
-                      onClick={onMovieTitleClick}
-                    >{movieName}</a>
-                  </h3>
-                </article>
+                <MovieCard
+                  movieData = {movieData}
+                  onMovieTitleClick = {onMovieTitleClick}
+                  key = {movieData + index}
+                />
               );
             })}
 
@@ -142,10 +137,14 @@ const Main = (props) => {
       </div>
     </>
   );
-};
+}
 
 Main.propTypes = {
-  moviesNames: PropTypes.arrayOf(PropTypes.string).isRequired,
+  // moviesNames: PropTypes.arrayOf(PropTypes.string).isRequired,
+  moviesData: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    photoUrl: PropTypes.string.isRequired,
+  })),
   promoInfo: PropTypes.shape({
     title: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,

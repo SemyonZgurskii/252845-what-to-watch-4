@@ -2,15 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './components/app/app.jsx';
-import {promoInfo, moviesNames} from './mock.js';
+import {promoInfo} from './mock.js';
+import {moviesData} from './mocks/movies.js';
 
 const onMovieTitleClick = () => {};
 
 ReactDOM.render(
     <App
       promoInfo = {promoInfo}
-      moviesNames = {moviesNames}
-      onMovieTitleClick={onMovieTitleClick}
+      moviesData = {moviesData}
+      onMovieTitleClick = {onMovieTitleClick}
     />,
     document.querySelector(`#root`)
 );
