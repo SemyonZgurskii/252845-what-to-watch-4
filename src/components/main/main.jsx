@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import MovieCard from '../movie-card/movie-card.jsx';
+import MoviesList from '../movies-list/movies-list.jsx';
 
 function Main(props) {
   const {title, genre, releaseDate} = props.promoInfo;
@@ -104,15 +103,10 @@ function Main(props) {
 
           <div className="catalog__movies-list">
 
-            {moviesData.map((movieData, index) => {
-              return (
-                <MovieCard
-                  movieData = {movieData}
-                  onMovieTitleClick = {onMovieTitleClick}
-                  key = {movieData + index}
-                />
-              );
-            })}
+            <MoviesList
+              moviesData = {moviesData}
+              onMovieTitleClick = {onMovieTitleClick}
+            />
 
           </div>
 
@@ -140,7 +134,6 @@ function Main(props) {
 }
 
 Main.propTypes = {
-  // moviesNames: PropTypes.arrayOf(PropTypes.string).isRequired,
   moviesData: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     photoUrl: PropTypes.string.isRequired,
