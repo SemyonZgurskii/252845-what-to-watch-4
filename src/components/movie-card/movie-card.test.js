@@ -9,7 +9,7 @@ describe(`Create MovieCard snapshot`, () => {
         <MovieCard
           movieData = {moviesData[0]}
           onMovieTitleClick = {() => {}}
-          onPointerEnter = {() => {}}
+          onMouseEnter = {() => {}}
         />
     ).toJSON();
 

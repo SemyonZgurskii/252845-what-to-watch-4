@@ -16,6 +16,7 @@ describe(`Test MovieCard component's functionality`, () => {
         <MovieCard
           onMovieTitleClick={onMovieTitleClick}
           movieData={moviesData[1]}
+          onMouseEnter={() => {}}
         />
     );
 

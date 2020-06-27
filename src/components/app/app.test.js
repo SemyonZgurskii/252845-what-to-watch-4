@@ -12,6 +12,7 @@ describe(`Create App snapshot`, () => {
           <App
             promoInfo={promoInfo}
             moviesData={moviesData}
+            onMovieTitleClick={() => {}}
           />)
       .toJSON();
 

@@ -21,7 +21,7 @@ class MoviesList extends PureComponent {
             movieData = {movieData}
             onMovieTitleClick = {onMovieTitleClick}
             key = {movieData + index}
-            onPointerEnter = {(movieInfo) => {
+            onMouseEnter = {(movieInfo) => {
               this.setState({
                 currentMovie: movieInfo,
               });

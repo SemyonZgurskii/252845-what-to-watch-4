@@ -1,5 +1,5 @@
 import React from 'react';
-import Enzyme, {shallow} from 'enzyme';
+import Enzyme, {shallow, mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import Main from './main.jsx';
 
@@ -14,7 +14,7 @@ describe(`Test Main component's functionality`, () => {
   it(`Movie title handler should be done`, () => {
     const onMovieTitleClick = jest.fn();
 
-    const MainElement = shallow(
+    const MainElement = mount(
         <Main
           promoInfo={promoInfo}
           moviesData={moviesData}

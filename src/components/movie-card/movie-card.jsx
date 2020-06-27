@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 
 function MovieCard(props) {
-  const {movieData, onMovieTitleClick, onPointerEnter} = props;
+  const {movieData, onMovieTitleClick, onMouseEnter} = props;
   const {title, photoUrl} = movieData;
 
   return (
     <article className="small-movie-card catalog__movies-card"
-      onPointerEnter = {() => onPointerEnter(movieData)}
+      onMouseEnter = {() => onMouseEnter(movieData)}
     >
       <div className="small-movie-card__image">
         <img src={photoUrl} alt={title} width="280" height="175" />
@@ -30,7 +30,7 @@ MovieCard.propTypes = {
     photoUrl: PropTypes.string.isRequired,
   }),
   onMovieTitleClick: PropTypes.func.isRequired,
-  onPointerEnter: PropTypes.func.isRequired,
+  onMouseEnter: PropTypes.func.isRequired,
 };
 
 export default MovieCard;

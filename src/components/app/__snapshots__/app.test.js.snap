@@ -259,7 +259,7 @@ Array [
       >
         <article
           className="small-movie-card catalog__movies-card"
-          onPointerEnter={[Function]}
+          onMouseEnter={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -277,6 +277,7 @@ Array [
             <a
               className="small-movie-card__link"
               href="movie-page.html"
+              onClick={[Function]}
             >
               Fantastic Beasts: The Crimes of Grindelwald
             </a>
@@ -284,7 +285,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onPointerEnter={[Function]}
+          onMouseEnter={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -302,6 +303,7 @@ Array [
             <a
               className="small-movie-card__link"
               href="movie-page.html"
+              onClick={[Function]}
             >
               Bohemian Rhapsody
             </a>
@@ -309,7 +311,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onPointerEnter={[Function]}
+          onMouseEnter={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -327,6 +329,7 @@ Array [
             <a
               className="small-movie-card__link"
               href="movie-page.html"
+              onClick={[Function]}
             >
               Macbeth
             </a>
@@ -334,7 +337,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onPointerEnter={[Function]}
+          onMouseEnter={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -352,6 +355,7 @@ Array [
             <a
               className="small-movie-card__link"
               href="movie-page.html"
+              onClick={[Function]}
             >
               Aviator
             </a>
@@ -359,7 +363,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onPointerEnter={[Function]}
+          onMouseEnter={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -377,6 +381,7 @@ Array [
             <a
               className="small-movie-card__link"
               href="movie-page.html"
+              onClick={[Function]}
             >
               We need to talk about Kevin
             </a>
@@ -384,7 +389,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onPointerEnter={[Function]}
+          onMouseEnter={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -402,6 +407,7 @@ Array [
             <a
               className="small-movie-card__link"
               href="movie-page.html"
+              onClick={[Function]}
             >
               Revenant
             </a>
@@ -409,7 +415,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onPointerEnter={[Function]}
+          onMouseEnter={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -427,6 +433,7 @@ Array [
             <a
               className="small-movie-card__link"
               href="movie-page.html"
+              onClick={[Function]}
             >
               Johnny English
             </a>
@@ -434,7 +441,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
-          onPointerEnter={[Function]}
+          onMouseEnter={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -452,6 +459,7 @@ Array [
             <a
               className="small-movie-card__link"
               href="movie-page.html"
+              onClick={[Function]}
             >
               Shutter Island
             </a>

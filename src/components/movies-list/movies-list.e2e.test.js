@@ -1,5 +1,5 @@
 import React from 'react';
-import Enzyme, {shallow} from 'enzyme';
+import Enzyme, {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {moviesData} from '../../mocks/movies.js';
 
@@ -13,16 +13,15 @@ describe(`Test MoviesList component's functionality`, () => {
   it(`onMouseEnter function should return correct value`, () => {
     const onMovieTitleClick = jest.fn();
 
-    const MoviesListElement = shallow(
+    const MoviesListElement = mount(
         <MoviesList
           onMovieTitleClick={onMovieTitleClick}
           moviesData={moviesData}
         />
     );
 
-    const testMovieCard = MoviesListElement.find(`article`).at(0);
-    testMovieCard.simulate(`mouseEnter`);
+    MoviesListElement.find(`article.small-movie-card`).at(0).simulate(`mouseEnter`);
 
-    expect(MoviesListElement.state.currentMovie).toMatchObject(moviesData[0]);
+    expect(MoviesListElement.state().currentMovie).toMatchObject(moviesData[0]);
   });
 });
