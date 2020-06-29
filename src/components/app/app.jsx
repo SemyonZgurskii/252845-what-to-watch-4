@@ -21,21 +21,20 @@ class App extends PureComponent {
   }
 
   _renderCurrentScreen() {
-    switch (this.state.currentScreen) {
-      case (ScreenMode.MAIN):
-        return (
-          <Main
-            {...this.props}
-            handleCardClick={this._handleCardClick}
-          />
-        );
-      case (ScreenMode.OVERVIEW):
-        return (
-          <MovieInfo
-            movieData={this.state.selectedMovie}
-          />
-        );
+    if (this.state.currentScreen === ScreenMode.OVERVIEW) {
+      return (
+        <MovieInfo
+          movieData={this.state.selectedMovie}
+        />
+      );
     }
+
+    return (
+      <Main
+        {...this.props}
+        handleCardClick={this._handleCardClick}
+      />
+    );
   }
 
   _handleCardClick(movieData) {
