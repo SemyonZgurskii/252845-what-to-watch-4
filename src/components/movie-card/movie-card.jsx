@@ -3,21 +3,26 @@ import PropTypes from 'prop-types';
 
 
 function MovieCard(props) {
-  const {movieData, onMovieTitleClick, onMouseEnter} = props;
-  const {title, photoUrl} = movieData;
+  const {movieData, onMovieTitleClick, onMouseEnter, handleCardClick} = props;
+  const {title, images} = movieData;
 
   return (
     <article className="small-movie-card catalog__movies-card"
-      onMouseEnter = {() => onMouseEnter(movieData)}
+      onMouseEnter={() => onMouseEnter(movieData)}
     >
-      <div className="small-movie-card__image">
-        <img src={photoUrl} alt={title} width="280" height="175" />
+      <div className="small-movie-card__image"
+        onClick={() => handleCardClick(movieData)}
+      >
+        <img src={images.card} alt={title} width="280" height="175"/>
       </div>
       <h3 className="small-movie-card__title">
         <a
           className="small-movie-card__link"
           href="movie-page.html"
-          onClick={onMovieTitleClick}
+          onClick={() => {
+            handleCardClick(movieData);
+            onMovieTitleClick();
+          }}
         >{title}</a>
       </h3>
     </article>
@@ -27,10 +32,13 @@ function MovieCard(props) {
 MovieCard.propTypes = {
   movieData: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    photoUrl: PropTypes.string.isRequired,
+    images: PropTypes.shape({
+      card: PropTypes.string.isRequired
+    }),
   }),
   onMovieTitleClick: PropTypes.func.isRequired,
   onMouseEnter: PropTypes.func.isRequired,
+  handleCardClick: PropTypes.func.isRequired,
 };
 
 export default MovieCard;

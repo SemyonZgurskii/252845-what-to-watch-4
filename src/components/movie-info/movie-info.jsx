@@ -1,13 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function MovieInfo() {
+// moviesData: PropTypes.arrayOf(PropTypes.shape({
+//   title: PropTypes.string.isRequired,
+//   images: PropTypes.shape({
+//     card: PropTypes.string.isRequired,
+//     smallPoster: PropTypes.string.isRequired,
+//     bigPoster: PropTypes.string.isRequired,
+//   }),
+//   genre: PropTypes.string.isRequired,
+//   releaseDate: PropTypes.number.isRequired,
+//   rating: PropTypes.shape({
+//     score: PropTypes.number.isRequired,
+//     level: PropTypes.string.isRequired,
+//     count: PropTypes.number.isRequired,
+//   }),
+//   info: PropTypes.string.isRequired,
+// })),
+
+function MovieInfo(props) {
+  const {title, images, genre, releaseDate, rating, info} = props.movieData;
+  const {bigPoster, smallPoster} = images;
+  const {score: ratingScore, level: ratingLevel, count: ratingCount} = rating;
+
+  console.log(images);
+
   return (
     <>
-      <section classNameName="movie-card movie-card--full">
+      <section className="movie-card movie-card--full">
         <div className="movie-card__hero">
           <div className="movie-card__bg">
-            <img src="img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel" />
+            <img src={bigPoster} alt="The Grand Budapest Hotel" />
           </div>
 
           <h1 className="visually-hidden">WTW</h1>
@@ -30,10 +53,10 @@ function MovieInfo() {
 
           <div className="movie-card__wrap">
             <div className="movie-card__desc">
-              <h2 className="movie-card__title">The Grand Budapest Hotel</h2>
+              <h2 className="movie-card__title">{title}</h2>
               <p className="movie-card__meta">
-                <span className="movie-card__genre">Drama</span>
-                <span className="movie-card__year">2014</span>
+                <span className="movie-card__genre">{genre}</span>
+                <span className="movie-card__year">{releaseDate}</span>
               </p>
 
               <div className="movie-card__buttons">
@@ -58,7 +81,7 @@ function MovieInfo() {
         <div className="movie-card__wrap movie-card__translate-top">
           <div className="movie-card__info">
             <div className="movie-card__poster movie-card__poster--big">
-              <img src="img/the-grand-budapest-hotel-poster.jpg" alt="The Grand Budapest Hotel poster" width="218" height="327" />
+              <img src={smallPoster} alt="The Grand Budapest Hotel poster" width="218" height="327" />
             </div>
 
             <div className="movie-card__desc">
@@ -77,10 +100,10 @@ function MovieInfo() {
               </nav>
 
               <div className="movie-rating">
-                <div className="movie-rating__score">8,9</div>
+                <div className="movie-rating__score">{ratingScore}</div>
                 <p className="movie-rating__meta">
-                  <span className="movie-rating__level">Very good</span>
-                  <span className="movie-rating__count">240 ratings</span>
+                  <span className="movie-rating__level">{ratingLevel}</span>
+                  <span className="movie-rating__count">{ratingCount}</span>
                 </p>
               </div>
 
@@ -158,5 +181,24 @@ function MovieInfo() {
     </>
   );
 }
+
+MovieInfo.propTypes = {
+  movieData: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    images: PropTypes.shape({
+      card: PropTypes.string.isRequired,
+      smallPoster: PropTypes.string.isRequired,
+      bigPoster: PropTypes.string.isRequired,
+    }),
+    genre: PropTypes.string.isRequired,
+    releaseDate: PropTypes.number.isRequired,
+    rating: PropTypes.shape({
+      score: PropTypes.number.isRequired,
+      level: PropTypes.string.isRequired,
+      count: PropTypes.number.isRequired,
+    }),
+    info: PropTypes.string.isRequired,
+  }),
+};
 
 export default MovieInfo;

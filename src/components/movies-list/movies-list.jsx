@@ -12,7 +12,7 @@ class MoviesList extends PureComponent {
   }
 
   render() {
-    const {moviesData, onMovieTitleClick} = this.props;
+    const {moviesData, onMovieTitleClick, handleCardClick} = this.props;
 
     return (
       moviesData.map((movieData, index) => {
@@ -20,6 +20,7 @@ class MoviesList extends PureComponent {
           <MovieCard
             movieData = {movieData}
             onMovieTitleClick = {onMovieTitleClick}
+            handleCardClick = {handleCardClick}
             key = {movieData + index}
             onMouseEnter = {(movieInfo) => {
               this.setState({
@@ -36,9 +37,22 @@ class MoviesList extends PureComponent {
 MoviesList.propTypes = {
   moviesData: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
-    photoUrl: PropTypes.string.isRequired,
+    images: PropTypes.shape({
+      card: PropTypes.string.isRequired,
+      smallPoster: PropTypes.string.isRequired,
+      bigPoster: PropTypes.string.isRequired,
+    }),
+    genre: PropTypes.string.isRequired,
+    releaseDate: PropTypes.number.isRequired,
+    rating: PropTypes.shape({
+      score: PropTypes.number.isRequired,
+      level: PropTypes.string.isRequired,
+      count: PropTypes.number.isRequired,
+    }),
+    info: PropTypes.string.isRequired,
   })),
-  onMovieTitleClick: PropTypes.func,
+  onMovieTitleClick: PropTypes.func.isRequired,
+  handleCardClick: PropTypes.func.isRequired
 };
 
 export default MoviesList;
