@@ -1,11 +1,17 @@
-import {moviesNames} from '../mock.js';
-
 const MOVIES_COUNT = 8;
-
 const MIN_DATE = 1990;
 const DATE_RANGE = 30;
 const MAX_SCORE = 10;
 const MAX_RATING_COUNT = 300;
+
+const promoInfo = {
+  title: `The Grand Budapest Hotel`,
+  genre: `Drama`,
+  releaseDate: 2014
+};
+
+const moviesNames = [`The Grand Budapest Hotel`, `Fantastic Beasts: The Crimes of Grindelwald`, `Bohemian Rhapsody`, `Macbeth`, `Aviator`, `We need to talk about Kevin`, `Revenant`, `Johnny English`, `Shutter Island`, `Pulp Fiction`, `No Country for Old Men`, `Snatch`, `Moonrise Kingdom`, `Seven Years in Tibet`, `Midnight Special`, `War of the Worlds`, `Dardjeeling Limited`, `Orlando`, `Mindhunter`, `Midnight Special`];
+
 
 const Format = {
   CARD: `card`,
@@ -79,4 +85,5 @@ for (let i = 0; i < MOVIES_COUNT; i++) {
 
 export {
   moviesData,
+  promoInfo,
 };
