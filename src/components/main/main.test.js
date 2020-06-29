@@ -2,7 +2,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Main from './main.jsx';
 
-import {promoInfo, moviesNames} from '../../mock.js';
+import {promoInfo} from '../../mock.js';
+import {moviesData} from '../../mocks/movies.js';
 
 const onMovieTitleClick = () => {};
 
@@ -12,7 +13,7 @@ describe(`Create Main snapshot`, () => {
       .create(
           <Main
             promoInfo={promoInfo}
-            moviesNames={moviesNames}
+            moviesData={moviesData}
             onMovieTitleClick={onMovieTitleClick}
           />
       )
