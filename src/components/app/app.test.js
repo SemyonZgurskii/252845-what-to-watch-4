@@ -2,7 +2,9 @@ import React from 'react';
 import renderer from "react-test-renderer";
 import App from './app.jsx';
 
-import {moviesData, promoInfo} from '../../mocks/movies.js';
+import {promoInfo} from '../../mocks/movies.js';
+import {testMoviesData} from '../../mocks/testMovies.js';
+
 
 describe(`Create App snapshot`, () => {
   it(`Should correctly render App`, () => {
@@ -10,7 +12,7 @@ describe(`Create App snapshot`, () => {
       .create(
           <App
             promoInfo={promoInfo}
-            moviesData={moviesData}
+            moviesData={testMoviesData}
             onMovieTitleClick={() => {}}
           />)
       .toJSON();

@@ -80,12 +80,12 @@ Array [
             <span
               className="movie-card__genre"
             >
-              Drama
+              Fighter
             </span>
             <span
               className="movie-card__year"
             >
-              2009
+              1994
             </span>
           </p>
           <div
@@ -198,7 +198,7 @@ Array [
             <div
               className="movie-rating__score"
             >
-              3.8
+              0.6
             </div>
             <p
               className="movie-rating__meta"
@@ -206,12 +206,12 @@ Array [
               <span
                 className="movie-rating__level"
               >
-                Normal
+                Very good
               </span>
               <span
                 className="movie-rating__count"
               >
-                35
+                74
               </span>
             </p>
           </div>
@@ -226,7 +226,7 @@ Array [
 
 Плитка сыпется с небес, тебе нравится.
 Эти штрафы и от них не избавиться.
-Патриаршие и пруды, центр "варится".
+Патриаршие и пруды, центр варится.
 Рейды на Садовом. Ночь. Снова пятница.
 
 В пятом поколении коренной москвич.
