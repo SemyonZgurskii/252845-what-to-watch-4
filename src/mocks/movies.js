@@ -23,20 +23,20 @@ function getRandomArraysItem(array) {
   return array[index];
 }
 
-function getPhotoUrl(title, format) {
+function createPhotoUrl(title, format) {
   const clearTitle = title.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, ``);
   const formatedTitle = clearTitle.toLowerCase().replace(/[` `]/g, `-`);
   let photoUrl;
 
   switch (format) {
     case (Format.CARD):
-      photoUrl = `img/` + formatedTitle + `.jpg`;
+      photoUrl = `img/${formatedTitle}.jpg`;
       break;
     case (Format.BIG_POSTER):
-      photoUrl = `img/bg-` + formatedTitle + `.jpg`;
+      photoUrl = `img/bg${formatedTitle}.jpg`;
       break;
     case (Format.SMALL_POSTER):
-      photoUrl = `img/` + formatedTitle + `-poster.jpg`;
+      photoUrl = `img/${formatedTitle}-poster.jpg`;
       break;
   }
 
@@ -51,13 +51,13 @@ function generateScore() {
   return Math.floor(Math.random() * MAX_SCORE);
 }
 
-function getMovieData(movieName) {
+function createMovieData(movieName) {
   return {
     title: movieName,
     images: {
-      card: getPhotoUrl(movieName, Format.CARD),
-      smallPoster: getPhotoUrl(movieName, Format.SMALL_POSTER),
-      bigPoster: getPhotoUrl(movieName, Format.BIG_POSTER),
+      card: createPhotoUrl(movieName, Format.CARD),
+      smallPoster: createPhotoUrl(movieName, Format.SMALL_POSTER),
+      bigPoster: createPhotoUrl(movieName, Format.BIG_POSTER),
     },
     genre: getRandomArraysItem(genres),
     releaseDate: generateReleaseDate(),
@@ -74,7 +74,7 @@ let moviesData = [];
 
 for (let i = 0; i < MOVIES_COUNT; i++) {
   const currentMovie = moviesNames[i];
-  moviesData.push(getMovieData(currentMovie));
+  moviesData.push(createMovieData(currentMovie));
 }
 
 export {
