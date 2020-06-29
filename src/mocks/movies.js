@@ -33,7 +33,7 @@ function createPhotoUrl(title, format) {
       photoUrl = `img/${formatedTitle}.jpg`;
       break;
     case (Format.BIG_POSTER):
-      photoUrl = `img/bg${formatedTitle}.jpg`;
+      photoUrl = `img/bg-${formatedTitle}.jpg`;
       break;
     case (Format.SMALL_POSTER):
       photoUrl = `img/${formatedTitle}-poster.jpg`;
