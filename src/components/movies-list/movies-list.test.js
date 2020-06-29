@@ -9,6 +9,7 @@ describe(`Create MoviesList snapshot`, () => {
         <MoviesList
           moviesData={moviesData}
           onMovieTitleClick={() => {}}
+          handleCardClick={() => {}}
         />
     ).toJSON();
 

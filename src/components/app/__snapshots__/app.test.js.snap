@@ -263,6 +263,34 @@ Array [
         >
           <div
             className="small-movie-card__image"
+            onClick={[Function]}
+          >
+            <img
+              alt="The Grand Budapest Hotel"
+              height="175"
+              src="img/the-grand-budapest-hotel.jpg"
+              width="280"
+            />
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+              onClick={[Function]}
+            >
+              The Grand Budapest Hotel
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+            onClick={[Function]}
           >
             <img
               alt="Fantastic Beasts: The Crimes of Grindelwald"
@@ -289,6 +317,7 @@ Array [
         >
           <div
             className="small-movie-card__image"
+            onClick={[Function]}
           >
             <img
               alt="Bohemian Rhapsody"
@@ -315,6 +344,7 @@ Array [
         >
           <div
             className="small-movie-card__image"
+            onClick={[Function]}
           >
             <img
               alt="Macbeth"
@@ -341,6 +371,7 @@ Array [
         >
           <div
             className="small-movie-card__image"
+            onClick={[Function]}
           >
             <img
               alt="Aviator"
@@ -367,6 +398,7 @@ Array [
         >
           <div
             className="small-movie-card__image"
+            onClick={[Function]}
           >
             <img
               alt="We need to talk about Kevin"
@@ -393,6 +425,7 @@ Array [
         >
           <div
             className="small-movie-card__image"
+            onClick={[Function]}
           >
             <img
               alt="Revenant"
@@ -419,6 +452,7 @@ Array [
         >
           <div
             className="small-movie-card__image"
+            onClick={[Function]}
           >
             <img
               alt="Johnny English"
@@ -436,32 +470,6 @@ Array [
               onClick={[Function]}
             >
               Johnny English
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-          onMouseEnter={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <img
-              alt="Shutter Island"
-              height="175"
-              src="img/shutter-island.jpg"
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-              onClick={[Function]}
-            >
-              Shutter Island
             </a>
           </h3>
         </article>

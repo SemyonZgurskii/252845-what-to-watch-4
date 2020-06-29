@@ -2,8 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Main from './main.jsx';
 
-import {promoInfo} from '../../mock.js';
-import {moviesData} from '../../mocks/movies.js';
+import {moviesData, promoInfo} from '../../mocks/movies.js';
 
 const onMovieTitleClick = () => {};
 
@@ -15,6 +14,7 @@ describe(`Create Main snapshot`, () => {
             promoInfo={promoInfo}
             moviesData={moviesData}
             onMovieTitleClick={onMovieTitleClick}
+            handleCardClick={() => {}}
           />
       )
       .toJSON();

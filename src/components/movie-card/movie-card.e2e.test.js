@@ -15,6 +15,7 @@ describe(`Test MovieCard component's functionality`, () => {
     const MovieCardElement = shallow(
         <MovieCard
           onMovieTitleClick={onMovieTitleClick}
+          handleCardClick={() => {}}
           movieData={moviesData[1]}
           onMouseEnter={() => {}}
         />
@@ -24,6 +25,6 @@ describe(`Test MovieCard component's functionality`, () => {
     const title = MovieCardElement.find(`a.small-movie-card__link`).text();
 
     expect(title).toEqual(moviesData[1].title);
-    expect(imageSrc).toEqual(moviesData[1].photoUrl);
+    expect(imageSrc).toEqual(moviesData[1].images.card);
   });
 });
