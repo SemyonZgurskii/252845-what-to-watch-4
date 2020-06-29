@@ -22,6 +22,7 @@ function MovieInfo(props) {
   const {title, images, genre, releaseDate, rating, info} = props.movieData;
   const {bigPoster, smallPoster} = images;
   const {score: ratingScore, level: ratingLevel, count: ratingCount} = rating;
+  const {description, director, stars} = info;
 
   return (
     <>
@@ -106,11 +107,11 @@ function MovieInfo(props) {
               </div>
 
               <div className="movie-card__text">
-                <p>{info}</p>
+                <p>{description}</p>
 
-                <p className="movie-card__director"><strong>Director: Wes Andreson</strong></p>
+                <p className="movie-card__director"><strong>Director: {director}</strong></p>
 
-                <p className="movie-card__starring"><strong>Starring: Bill Murray, Edward Norton, Jude Law, Willem Dafoe and other</strong></p>
+                <p className="movie-card__starring"><strong>Starring: {stars.join(`, `)}</strong></p>
               </div>
             </div>
           </div>
@@ -193,7 +194,11 @@ MovieInfo.propTypes = {
       level: PropTypes.string.isRequired,
       count: PropTypes.number.isRequired,
     }),
-    info: PropTypes.string.isRequired,
+    info: PropTypes.shape({
+      description: PropTypes.string.isRequired,
+      director: PropTypes.string.isRequired,
+      stars: PropTypes.arrayOf(PropTypes.string),
+    }),
   }),
 };
 

@@ -22,7 +22,25 @@ const Format = {
 const levels = [`Bad`, `Normal`, `Good`, `Very good`, `Awesome`];
 const genres = [`Drama`, `Comedy`, `Horror`, `Fighter`];
 
-const sourceText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis rhoncus urna neque viverra justo nec ultrices dui. Sed felis eget velit aliquet sagittis id consectetur. Morbi leo urna molestie at elementum eu facilisis. Interdum consectetur libero id faucibus nisl tincidunt eget nullam non. Viverra maecenas accumsan lacus vel facilisis volutpat est velit. Leo duis ut diam quam. A diam maecenas sed enim ut sem viverra aliquet eget. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Diam maecenas sed enim ut sem viverra. Aliquet risus feugiat in ante metus dictum at. Egestas maecenas pharetra convallis posuere morbi leo urna. Cras fermentum odio eu feugiat. Nulla porttitor massa id neque aliquam vestibulum. Malesuada bibendum arcu vitae elementum curabitur vitae nunc. Posuere lorem ipsum dolor sit amet consectetur adipiscing elit duis. Egestas pretium aenean pharetra magna ac placerat. Blandit turpis cursus in hac habitasse platea dictumst quisque sagittis.`;
+const sourceText = `Это жёсткий город - своя шкала контрастов.
+Купеческая Мекка, государство в государстве.
+Тот самый город, что не проводит гей-парады.
+Тот самый город - профицит которого ярды.
+
+Плитка сыпется с небес, тебе нравится.
+Эти штрафы и от них не избавиться.
+Патриаршие и пруды, центр "варится".
+Рейды на Садовом. Ночь. Снова пятница.
+
+В пятом поколении коренной москвич.
+Не хожу на митинги и не втираю дичь.
+Помню этот город пятнадцать лет назад -
+Отвечаю, он щас мировой стандарт.
+
+Квинтэссенция интеллигентов и джамшутов.
+Здесь комерсы выходят в окна без парашюта.
+Пешком с Арбата и до площади Гагарина -
+Там хлопну бургер за здоровье Собянина.`;
 
 function getRandomArraysItem(array) {
   const index = Math.floor(Math.random() * array.length);
@@ -54,7 +72,7 @@ function generateReleaseDate() {
 }
 
 function generateScore() {
-  return Math.floor(Math.random() * MAX_SCORE);
+  return (Math.floor(Math.random() * MAX_SCORE * 10)) / 10;
 }
 
 function createMovieData(movieName) {
@@ -72,7 +90,11 @@ function createMovieData(movieName) {
       level: getRandomArraysItem(levels),
       count: Math.floor(Math.random() * MAX_RATING_COUNT),
     },
-    info: sourceText,
+    info: {
+      description: sourceText,
+      director: `Timati`,
+      stars: [`Timati`, `Goof`],
+    }
   };
 }
 

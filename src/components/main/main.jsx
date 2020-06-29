@@ -150,7 +150,11 @@ Main.propTypes = {
       level: PropTypes.string.isRequired,
       count: PropTypes.number.isRequired,
     }),
-    info: PropTypes.string.isRequired,
+    info: PropTypes.shape({
+      description: PropTypes.string.isRequired,
+      director: PropTypes.string.isRequired,
+      stars: PropTypes.arrayOf(PropTypes.string),
+    }),
   })),
   promoInfo: PropTypes.shape({
     title: PropTypes.string.isRequired,
