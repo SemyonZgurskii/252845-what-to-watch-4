@@ -15,7 +15,7 @@ describe(`Test MovieCard component's functionality`, () => {
     const MovieCardElement = shallow(
         <MovieCard
           onMovieTitleClick={onMovieTitleClick}
-          handleCardClick={() => {}}
+          onCardClick={() => {}}
           movieData={moviesData[1]}
           onMouseEnter={() => {}}
         />

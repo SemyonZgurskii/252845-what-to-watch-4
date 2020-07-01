@@ -15,7 +15,7 @@ describe(`Create Main snapshot`, () => {
             promoInfo={promoInfo}
             moviesData={testMoviesData}
             onMovieTitleClick={onMovieTitleClick}
-            handleCardClick={() => {}}
+            onCardClick={() => {}}
           />
       )
       .toJSON();

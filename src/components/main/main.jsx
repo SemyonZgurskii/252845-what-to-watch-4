@@ -4,9 +4,7 @@ import MoviesList from '../movies-list/movies-list.jsx';
 
 function Main(props) {
   const {title, genre, releaseDate} = props.promoInfo;
-  // const moviesData = props.moviesData;
-  // const onMovieTitleClick = props.onMovieTitleClick;
-  const {moviesData, onMovieTitleClick, handleCardClick} = props;
+  const {moviesData, onMovieTitleClick, onCardClick} = props;
 
   return (
     <>
@@ -107,7 +105,7 @@ function Main(props) {
             <MoviesList
               moviesData = {moviesData}
               onMovieTitleClick = {onMovieTitleClick}
-              handleCardClick = {handleCardClick}
+              onCardClick = {onCardClick}
             />
 
           </div>
@@ -162,7 +160,7 @@ Main.propTypes = {
     releaseDate: PropTypes.number.isRequired,
   }),
   onMovieTitleClick: PropTypes.func.isRequired,
-  handleCardClick: PropTypes.func.isRequired
+  onCardClick: PropTypes.func.isRequired
 };
 
 export default Main;

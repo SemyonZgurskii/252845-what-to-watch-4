@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 
 function MovieCard(props) {
-  const {movieData, onMovieTitleClick, onMouseEnter, handleCardClick} = props;
+  const {movieData, onMovieTitleClick, onMouseEnter, onCardClick} = props;
   const {title, images} = movieData;
 
   return (
@@ -11,7 +11,7 @@ function MovieCard(props) {
       onMouseEnter={() => onMouseEnter(movieData)}
     >
       <div className="small-movie-card__image"
-        onClick={() => handleCardClick(movieData)}
+        onClick={() => onCardClick(movieData)}
       >
         <img src={images.card} alt={title} width="280" height="175"/>
       </div>
@@ -20,7 +20,7 @@ function MovieCard(props) {
           className="small-movie-card__link"
           href="movie-page.html"
           onClick={() => {
-            handleCardClick(movieData);
+            onCardClick(movieData);
             onMovieTitleClick();
           }}
         >{title}</a>
@@ -38,7 +38,7 @@ MovieCard.propTypes = {
   }),
   onMovieTitleClick: PropTypes.func.isRequired,
   onMouseEnter: PropTypes.func.isRequired,
-  handleCardClick: PropTypes.func.isRequired,
+  onCardClick: PropTypes.func.isRequired,
 };
 
 export default MovieCard;

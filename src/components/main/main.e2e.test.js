@@ -18,7 +18,7 @@ describe(`Test Main component's functionality`, () => {
           promoInfo={promoInfo}
           moviesData={moviesData}
           onMovieTitleClick={onMovieTitleClick}
-          handleCardClick={() => {}}
+          onCardClick={() => {}}
         />
     );
 
@@ -32,14 +32,14 @@ describe(`Test Main component's functionality`, () => {
   });
 
   it(`MovieCard and it's title handler should be executed`, () => {
-    const handleCardClick = jest.fn();
+    const onCardClick = jest.fn();
 
     const MainElement = mount(
         <Main
           promoInfo={promoInfo}
           moviesData={moviesData}
           onMovieTitleClick={() => {}}
-          handleCardClick={handleCardClick}
+          onCardClick={onCardClick}
         />
     );
 
@@ -50,6 +50,6 @@ describe(`Test Main component's functionality`, () => {
     movieCardImageElement.simulate(`click`);
     movieCardTitleElement.simulate(`click`);
 
-    expect(handleCardClick.mock.calls.length).toBe(2);
+    expect(onCardClick.mock.calls.length).toBe(2);
   });
 });

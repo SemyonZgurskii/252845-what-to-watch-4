@@ -33,7 +33,7 @@ class App extends PureComponent {
     return (
       <Main
         {...this.props}
-        handleCardClick={this._handleCardClick}
+        onCardClick={this._handleCardClick}
       />
     );
   }

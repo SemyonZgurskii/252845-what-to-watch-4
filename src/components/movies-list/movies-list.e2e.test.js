@@ -15,7 +15,7 @@ describe(`Test MoviesList component's functionality`, () => {
 
     const MoviesListElement = mount(
         <MoviesList
-          handleCardClick={() => {}}
+          onCardClick={() => {}}
           onMovieTitleClick={onMovieTitleClick}
           moviesData={moviesData}
         />
