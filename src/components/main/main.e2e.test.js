@@ -3,15 +3,14 @@ import Enzyme, {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import Main from './main.jsx';
 
-import {promoInfo} from '../../mock.js';
-import {moviesData} from '../../mocks/movies.js';
+import {moviesData, promoInfo} from '../../mocks/movies.js';
 
 Enzyme.configure({
   adapter: new Adapter(),
 });
 
 describe(`Test Main component's functionality`, () => {
-  it(`Movie title handler should be done`, () => {
+  it(`MovieCard title handler should be executed`, () => {
     const onMovieTitleClick = jest.fn();
 
     const MainElement = mount(
@@ -19,6 +18,7 @@ describe(`Test Main component's functionality`, () => {
           promoInfo={promoInfo}
           moviesData={moviesData}
           onMovieTitleClick={onMovieTitleClick}
+          onCardClick={() => {}}
         />
     );
 
@@ -29,5 +29,27 @@ describe(`Test Main component's functionality`, () => {
     });
 
     expect(onMovieTitleClick.mock.calls.length).toBe(moviesData.length);
+  });
+
+  it(`MovieCard and it's title handler should be executed`, () => {
+    const onCardClick = jest.fn();
+
+    const MainElement = mount(
+        <Main
+          promoInfo={promoInfo}
+          moviesData={moviesData}
+          onMovieTitleClick={() => {}}
+          onCardClick={onCardClick}
+        />
+    );
+
+    const movieCardElement = MainElement.find(`article.small-movie-card`).at(0);
+    const movieCardImageElement = movieCardElement.find(`div.small-movie-card__image`);
+    const movieCardTitleElement = movieCardElement.find(`a.small-movie-card__link`);
+
+    movieCardImageElement.simulate(`click`);
+    movieCardTitleElement.simulate(`click`);
+
+    expect(onCardClick.mock.calls.length).toBe(2);
   });
 });
