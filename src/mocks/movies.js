@@ -94,7 +94,8 @@ function createMovieData(movieName) {
       description: sourceText,
       director: `Timati`,
       stars: [`Timati`, `Goof`],
-    }
+    },
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
   };
 }
 
