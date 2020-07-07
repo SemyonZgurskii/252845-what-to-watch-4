@@ -18,13 +18,19 @@ class MoviesList extends PureComponent {
       moviesData.map((movieData, index) => {
         return (
           <MovieCard
-            movieData = {movieData}
-            onMovieTitleClick = {onMovieTitleClick}
-            onCardClick = {onCardClick}
-            key = {movieData + index}
-            onMouseEnter = {(movieInfo) => {
+            movieData={movieData}
+            onMovieTitleClick={onMovieTitleClick}
+            onCardClick={onCardClick}
+            key={movieData.title + index}
+            isPlaying={this.state.currentMovie === movieData}
+            onMouseEnter={(movieInfo) => {
               this.setState({
                 currentMovie: movieInfo,
+              });
+            }}
+            onMouseOut={() => {
+              this.setState({
+                currentMovie: null,
               });
             }}
           />
