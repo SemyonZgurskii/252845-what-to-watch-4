@@ -16,9 +16,11 @@ class VideoPlayer extends PureComponent {
     const video = this._videoRef.current;
 
     if (this.props.isPlaying) {
+      video.src = this.props.previewVideo;
       video.play();
     } else {
       video.pause();
+      video.src = ``;
     }
   }
 
@@ -31,6 +33,7 @@ class VideoPlayer extends PureComponent {
         aria-label={`${title} movie preview`}
         ref={this._videoRef}
         poster={previewImage}
+        muted={true}
       >
         <source
           src={previewVideo}

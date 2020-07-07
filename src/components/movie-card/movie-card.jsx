@@ -48,6 +48,7 @@ MovieCard.propTypes = {
   onMouseEnter: PropTypes.func.isRequired,
   onCardClick: PropTypes.func.isRequired,
   isPlaying: PropTypes.bool.isRequired,
+  onMouseOut: PropTypes.func.isRequired,
 };
 
 export default MovieCard;
