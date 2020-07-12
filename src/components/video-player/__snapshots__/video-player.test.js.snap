@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Create VideoPlayer snapshot Should correctly rendeo VideoPlayer 1`] = `
+<video
+  aria-label="The Grand Budapest Hotel movie preview"
+  height="175"
+  muted={true}
+  poster="img/the-grand-budapest-hotel.jpg"
+  preload="none"
+  width="280"
+>
+  <source
+    src="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+    type="video/mp4"
+  />
+</video>
+`;

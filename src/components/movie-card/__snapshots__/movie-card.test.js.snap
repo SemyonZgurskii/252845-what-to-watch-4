@@ -4,17 +4,25 @@ exports[`Create MovieCard snapshot MovieCard should correctly render 1`] = `
 <article
   className="small-movie-card catalog__movies-card"
   onMouseEnter={[Function]}
+  onMouseOut={[Function]}
 >
   <div
     className="small-movie-card__image"
     onClick={[Function]}
   >
-    <img
-      alt="The Grand Budapest Hotel"
+    <video
+      aria-label="The Grand Budapest Hotel movie preview"
       height="175"
-      src="img/the-grand-budapest-hotel.jpg"
+      muted={true}
+      poster="img/the-grand-budapest-hotel.jpg"
+      preload="none"
       width="280"
-    />
+    >
+      <source
+        src="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+        type="video/mp4"
+      />
+    </video>
   </div>
   <h3
     className="small-movie-card__title"
