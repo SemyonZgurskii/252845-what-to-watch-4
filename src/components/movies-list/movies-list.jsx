@@ -13,6 +13,10 @@ class MoviesList extends PureComponent {
     this.timerID = null;
   }
 
+  componentWillUnmount() {
+    clearTimeout(this.timerID);
+  }
+
   render() {
     const {moviesData, onMovieTitleClick, onCardClick} = this.props;
 
