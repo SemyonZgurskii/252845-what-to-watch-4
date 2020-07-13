@@ -33,6 +33,7 @@ const testMoviesData = [
       director: `Timati`,
       stars: [`Timati`, `Goof`],
     },
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
   },
   {
     title: `Johnny English`,
@@ -68,6 +69,7 @@ const testMoviesData = [
       director: `Timati`,
       stars: [`Timati`, `Goof`],
     },
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
   },
   {
     title: `Fantastic Beasts: The Crimes of Grindelwald`,
@@ -103,6 +105,7 @@ const testMoviesData = [
       director: `Timati`,
       stars: [`Timati`, `Goof`],
     },
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
   },
   {
     title: `Bohemian Rhapsody`,
@@ -138,6 +141,7 @@ const testMoviesData = [
       director: `Timati`,
       stars: [`Timati`, `Goof`],
     },
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
   },
   {
     title: `Macbeth`,
@@ -173,6 +177,7 @@ const testMoviesData = [
       director: `Timati`,
       stars: [`Timati`, `Goof`],
     },
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
   },
   {
     title: `Aviator`,
@@ -208,6 +213,7 @@ const testMoviesData = [
       director: `Timati`,
       stars: [`Timati`, `Goof`],
     },
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
   },
   {
     title: `We need to talk about Kevin`,
@@ -243,6 +249,7 @@ const testMoviesData = [
       director: `Timati`,
       stars: [`Timati`, `Goof`],
     },
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
   },
   {
     title: `Revenant`,
@@ -278,6 +285,7 @@ const testMoviesData = [
       director: `Timati`,
       stars: [`Timati`, `Goof`],
     },
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
   },
 ];
 

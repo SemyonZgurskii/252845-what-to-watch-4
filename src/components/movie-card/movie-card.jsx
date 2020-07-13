@@ -1,19 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import VideoPlayer from '../video-player/video-player.jsx';
 
 
 function MovieCard(props) {
-  const {movieData, onMovieTitleClick, onMouseEnter, onCardClick} = props;
-  const {title, images} = movieData;
+  const {movieData, onMovieTitleClick, onMouseEnter, onCardClick, isPlaying, onMouseOut} = props;
+  const {title, images, preview} = movieData;
 
   return (
     <article className="small-movie-card catalog__movies-card"
-      onMouseEnter={() => onMouseEnter(movieData)}
+      onMouseEnter = {() => onMouseEnter(movieData)}
+      onMouseOut={onMouseOut}
     >
       <div className="small-movie-card__image"
-        onClick={() => onCardClick(movieData)}
+        onClick = {() => onCardClick(movieData)}
       >
-        <img src={images.card} alt={title} width="280" height="175"/>
+        <VideoPlayer
+          previewImage = {images.card}
+          previewVideo = {preview}
+          title = {title}
+          isPlaying = {isPlaying}
+        />
       </div>
       <h3 className="small-movie-card__title">
         <a
@@ -35,10 +42,13 @@ MovieCard.propTypes = {
     images: PropTypes.shape({
       card: PropTypes.string.isRequired
     }),
+    preview: PropTypes.string.isRequired,
   }),
   onMovieTitleClick: PropTypes.func.isRequired,
   onMouseEnter: PropTypes.func.isRequired,
   onCardClick: PropTypes.func.isRequired,
+  isPlaying: PropTypes.bool.isRequired,
+  onMouseOut: PropTypes.func.isRequired,
 };
 
 export default MovieCard;

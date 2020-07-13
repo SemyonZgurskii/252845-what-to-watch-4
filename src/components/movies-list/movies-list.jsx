@@ -9,6 +9,8 @@ class MoviesList extends PureComponent {
     this.state = {
       currentMovie: null,
     };
+
+    this.timerID = null;
   }
 
   render() {
@@ -18,14 +20,21 @@ class MoviesList extends PureComponent {
       moviesData.map((movieData, index) => {
         return (
           <MovieCard
-            movieData = {movieData}
-            onMovieTitleClick = {onMovieTitleClick}
-            onCardClick = {onCardClick}
-            key = {movieData + index}
-            onMouseEnter = {(movieInfo) => {
-              this.setState({
+            movieData={movieData}
+            onMovieTitleClick={onMovieTitleClick}
+            onCardClick={onCardClick}
+            key={movieData.title + index}
+            isPlaying={this.state.currentMovie === movieData}
+            onMouseEnter={(movieInfo) => {
+              this.timerID = setTimeout(() => this.setState({
                 currentMovie: movieInfo,
+              }), 1000);
+            }}
+            onMouseOut={() => {
+              this.setState({
+                currentMovie: null,
               });
+              clearTimeout(this.timerID);
             }}
           />
         );

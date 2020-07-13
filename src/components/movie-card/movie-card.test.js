@@ -7,10 +7,12 @@ describe(`Create MovieCard snapshot`, () => {
   it(`MovieCard should correctly render`, () => {
     const MovieCardElement = renderer.create(
         <MovieCard
+          isPlaying={true}
           onCardClick={() => {}}
           movieData = {testMoviesData[0]}
           onMovieTitleClick = {() => {}}
           onMouseEnter = {() => {}}
+          onMouseOut={() => {}}
         />
     ).toJSON();
 

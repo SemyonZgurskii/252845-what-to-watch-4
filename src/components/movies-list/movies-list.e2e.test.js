@@ -23,6 +23,11 @@ describe(`Test MoviesList component's functionality`, () => {
 
     MoviesListElement.find(`article.small-movie-card`).at(0).simulate(`mouseEnter`);
 
-    expect(MoviesListElement.state().currentMovie).toMatchObject(moviesData[0]);
+    setTimeout(
+        () => {
+          expect(MoviesListElement.state().currentMovie).toMatchObject(moviesData[0]);
+        },
+        1000
+    );
   });
 });
