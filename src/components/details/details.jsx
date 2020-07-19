@@ -1,17 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// TODO переместить в компонент:
-function getStarsMarkup(stars) {
-  return (stars.map((star) => {
-    return (
-      <React.Fragment key={star}>
-        {star} <br/>
-      </React.Fragment>
-    );
-  }));
-}
-
 function Details(props) {
   const {info, genre, releaseDate, runTime} = props.movieData;
   const {director, stars} = info;
@@ -26,7 +15,15 @@ function Details(props) {
         <p className="movie-card__details-item">
           <strong className="movie-card__details-name">Starring</strong>
           <span className="movie-card__details-value">
-            {getStarsMarkup(stars)}
+            {
+              stars.map((star) => {
+                return (
+                  <React.Fragment key={star}>
+                    {star} <br/>
+                  </React.Fragment>
+                );
+              })
+            }
           </span>
         </p>
       </div>
