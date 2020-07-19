@@ -1,29 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
-
-function formatTime(time) {
-  return moment(time).format(`MMMM DD, YYYY`);
-}
-
-function getReviewMarkup(review) {
-  const {text, author, date, rating} = review;
-
-  return (
-    <div className="review" key={author + date}>
-      <blockquote className="review__quote">
-        <p className="review__text">{text}</p>
-
-        <footer className="review__details">
-          <cite className="review__author">{author}</cite>
-          <time className="review__date" dateTime={date}>{formatTime(date)}</time>
-        </footer>
-      </blockquote>
-
-      <div className="review__rating">{rating}</div>
-    </div>
-  );
-}
+import Review from '../review/review.jsx';
 
 function Reviews(props) {
   const {reviews} = props.movieData;
@@ -33,10 +10,18 @@ function Reviews(props) {
   return (
     <div className="movie-card__reviews movie-card__row">
       <div className="movie-card__reviews-col">
-        {leftColumnReviews.map((review) => getReviewMarkup(review))}
+        {leftColumnReviews.map((review) => {
+          return (
+            <Review {...review} key={review.date + review.author}/>
+          );
+        })}
       </div>
       <div className="movie-card__reviews-col">
-        {rightColumnReviews.map((review) => getReviewMarkup(review))}
+        {rightColumnReviews.map((review) => {
+          return (
+            <Review {...review} key={review.date + review.author}/>
+          );
+        })}
       </div>
     </div>
   );
