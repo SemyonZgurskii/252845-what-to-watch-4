@@ -8,6 +8,7 @@ const testMoviesData = [
     },
     genre: `Fighter`,
     releaseDate: 1994,
+    runTime: `1h 23m`,
     rating: {score: 0.6, level: `Very good`, count: 74},
     info: {
       description:
@@ -31,9 +32,37 @@ const testMoviesData = [
         `Пешком с Арбата и до площади Гагарина -\n` +
         `Там хлопну бургер за здоровье Собянина.`,
       director: `Timati`,
-      stars: [`Timati`, `Goof`],
+      stars: [`Timati`, `Goof`, `Bill Murray`, `Edward Norton`, `Jude Law`, `Willem Dafoe`, `Saoirse Ronan`, `Tony Revoloru`, `Tilda Swinton`, `Tom Wilkinson`, `Owen Wilkinson`, `Adrien Brody`, `Ralph Fiennes`, `Jeff Goldblum`],
     },
     preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    reviews: [
+      {
+        text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+        author: `Kate Muir`,
+        date: `2016-12-24`,
+        rating: 8.9,
+      }, {
+        text: `Anderson's films are too precious for some, but for those of us willing to lose ourselves in them, they're a delight. "The Grand Budapest Hotel" is no different, except that he has added a hint of gravitas to the mix, improving the recipe.`,
+        author: `Bill Goodykoontz`,
+        date: `2015-11-18`,
+        rating: 8.0,
+      }, {
+        text: `I didn't find it amusing, and while I can appreciate the creativity, it's an hour and 40 minutes I wish I could take back.`,
+        author: `Amanda Greever`,
+        date: `2015-11-18`,
+        rating: 8.0,
+      }, {
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+        rating: 7.2,
+      }, {
+        text: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        author: `Paula Fleri-Soler`,
+        date: `2016-12-20`,
+        rating: 7.6,
+      }
+    ]
   },
   {
     title: `Johnny English`,
@@ -44,6 +73,7 @@ const testMoviesData = [
     },
     genre: `Fighter`,
     releaseDate: 1992,
+    runTime: `1h 23m`,
     rating: {score: 2.9, level: `Bad`, count: 68},
     info: {
       description:
@@ -67,9 +97,37 @@ const testMoviesData = [
         `Пешком с Арбата и до площади Гагарина -\n` +
         `Там хлопну бургер за здоровье Собянина.`,
       director: `Timati`,
-      stars: [`Timati`, `Goof`],
+      stars: [`Timati`, `Goof`, `Bill Murray`, `Edward Norton`, `Jude Law`, `Willem Dafoe`, `Saoirse Ronan`, `Tony Revoloru`, `Tilda Swinton`, `Tom Wilkinson`, `Owen Wilkinson`, `Adrien Brody`, `Ralph Fiennes`, `Jeff Goldblum`],
     },
     preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    reviews: [
+      {
+        text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+        author: `Kate Muir`,
+        date: `2016-12-24`,
+        rating: 8.9,
+      }, {
+        text: `Anderson's films are too precious for some, but for those of us willing to lose ourselves in them, they're a delight. "The Grand Budapest Hotel" is no different, except that he has added a hint of gravitas to the mix, improving the recipe.`,
+        author: `Bill Goodykoontz`,
+        date: `2015-11-18`,
+        rating: 8.0,
+      }, {
+        text: `I didn't find it amusing, and while I can appreciate the creativity, it's an hour and 40 minutes I wish I could take back.`,
+        author: `Amanda Greever`,
+        date: `2015-11-18`,
+        rating: 8.0,
+      }, {
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+        rating: 7.2,
+      }, {
+        text: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        author: `Paula Fleri-Soler`,
+        date: `2016-12-20`,
+        rating: 7.6,
+      }
+    ]
   },
   {
     title: `Fantastic Beasts: The Crimes of Grindelwald`,
@@ -80,6 +138,7 @@ const testMoviesData = [
     },
     genre: `Drama`,
     releaseDate: 2001,
+    runTime: `1h 23m`,
     rating: {score: 5.1, level: `Awesome`, count: 16},
     info: {
       description:
@@ -103,9 +162,37 @@ const testMoviesData = [
         `Пешком с Арбата и до площади Гагарина -\n` +
         `Там хлопну бургер за здоровье Собянина.`,
       director: `Timati`,
-      stars: [`Timati`, `Goof`],
+      stars: [`Timati`, `Goof`, `Bill Murray`, `Edward Norton`, `Jude Law`, `Willem Dafoe`, `Saoirse Ronan`, `Tony Revoloru`, `Tilda Swinton`, `Tom Wilkinson`, `Owen Wilkinson`, `Adrien Brody`, `Ralph Fiennes`, `Jeff Goldblum`],
     },
     preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    reviews: [
+      {
+        text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+        author: `Kate Muir`,
+        date: `2016-12-24`,
+        rating: 8.9,
+      }, {
+        text: `Anderson's films are too precious for some, but for those of us willing to lose ourselves in them, they're a delight. "The Grand Budapest Hotel" is no different, except that he has added a hint of gravitas to the mix, improving the recipe.`,
+        author: `Bill Goodykoontz`,
+        date: `2015-11-18`,
+        rating: 8.0,
+      }, {
+        text: `I didn't find it amusing, and while I can appreciate the creativity, it's an hour and 40 minutes I wish I could take back.`,
+        author: `Amanda Greever`,
+        date: `2015-11-18`,
+        rating: 8.0,
+      }, {
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+        rating: 7.2,
+      }, {
+        text: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        author: `Paula Fleri-Soler`,
+        date: `2016-12-20`,
+        rating: 7.6,
+      }
+    ]
   },
   {
     title: `Bohemian Rhapsody`,
@@ -116,6 +203,7 @@ const testMoviesData = [
     },
     genre: `Fighter`,
     releaseDate: 2004,
+    runTime: `1h 23m`,
     rating: {score: 2, level: `Normal`, count: 28},
     info: {
       description:
@@ -139,9 +227,37 @@ const testMoviesData = [
         `Пешком с Арбата и до площади Гагарина -\n` +
         `Там хлопну бургер за здоровье Собянина.`,
       director: `Timati`,
-      stars: [`Timati`, `Goof`],
+      stars: [`Timati`, `Goof`, `Bill Murray`, `Edward Norton`, `Jude Law`, `Willem Dafoe`, `Saoirse Ronan`, `Tony Revoloru`, `Tilda Swinton`, `Tom Wilkinson`, `Owen Wilkinson`, `Adrien Brody`, `Ralph Fiennes`, `Jeff Goldblum`],
     },
     preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    reviews: [
+      {
+        text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+        author: `Kate Muir`,
+        date: `2016-12-24`,
+        rating: 8.9,
+      }, {
+        text: `Anderson's films are too precious for some, but for those of us willing to lose ourselves in them, they're a delight. "The Grand Budapest Hotel" is no different, except that he has added a hint of gravitas to the mix, improving the recipe.`,
+        author: `Bill Goodykoontz`,
+        date: `2015-11-18`,
+        rating: 8.0,
+      }, {
+        text: `I didn't find it amusing, and while I can appreciate the creativity, it's an hour and 40 minutes I wish I could take back.`,
+        author: `Amanda Greever`,
+        date: `2015-11-18`,
+        rating: 8.0,
+      }, {
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+        rating: 7.2,
+      }, {
+        text: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        author: `Paula Fleri-Soler`,
+        date: `2016-12-20`,
+        rating: 7.6,
+      }
+    ]
   },
   {
     title: `Macbeth`,
@@ -152,6 +268,7 @@ const testMoviesData = [
     },
     genre: `Fighter`,
     releaseDate: 2011,
+    runTime: `1h 23m`,
     rating: {score: 7.6, level: `Bad`, count: 60},
     info: {
       description:
@@ -175,9 +292,37 @@ const testMoviesData = [
         `Пешком с Арбата и до площади Гагарина -\n` +
         `Там хлопну бургер за здоровье Собянина.`,
       director: `Timati`,
-      stars: [`Timati`, `Goof`],
+      stars: [`Timati`, `Goof`, `Bill Murray`, `Edward Norton`, `Jude Law`, `Willem Dafoe`, `Saoirse Ronan`, `Tony Revoloru`, `Tilda Swinton`, `Tom Wilkinson`, `Owen Wilkinson`, `Adrien Brody`, `Ralph Fiennes`, `Jeff Goldblum`],
     },
     preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    reviews: [
+      {
+        text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+        author: `Kate Muir`,
+        date: `2016-12-24`,
+        rating: 8.9,
+      }, {
+        text: `Anderson's films are too precious for some, but for those of us willing to lose ourselves in them, they're a delight. "The Grand Budapest Hotel" is no different, except that he has added a hint of gravitas to the mix, improving the recipe.`,
+        author: `Bill Goodykoontz`,
+        date: `2015-11-18`,
+        rating: 8.0,
+      }, {
+        text: `I didn't find it amusing, and while I can appreciate the creativity, it's an hour and 40 minutes I wish I could take back.`,
+        author: `Amanda Greever`,
+        date: `2015-11-18`,
+        rating: 8.0,
+      }, {
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+        rating: 7.2,
+      }, {
+        text: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        author: `Paula Fleri-Soler`,
+        date: `2016-12-20`,
+        rating: 7.6,
+      }
+    ]
   },
   {
     title: `Aviator`,
@@ -188,6 +333,7 @@ const testMoviesData = [
     },
     genre: `Drama`,
     releaseDate: 2002,
+    runTime: `1h 23m`,
     rating: {score: 2.2, level: `Very good`, count: 22},
     info: {
       description:
@@ -211,9 +357,37 @@ const testMoviesData = [
         `Пешком с Арбата и до площади Гагарина -\n` +
         `Там хлопну бургер за здоровье Собянина.`,
       director: `Timati`,
-      stars: [`Timati`, `Goof`],
+      stars: [`Timati`, `Goof`, `Bill Murray`, `Edward Norton`, `Jude Law`, `Willem Dafoe`, `Saoirse Ronan`, `Tony Revoloru`, `Tilda Swinton`, `Tom Wilkinson`, `Owen Wilkinson`, `Adrien Brody`, `Ralph Fiennes`, `Jeff Goldblum`],
     },
     preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    reviews: [
+      {
+        text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+        author: `Kate Muir`,
+        date: `2016-12-24`,
+        rating: 8.9,
+      }, {
+        text: `Anderson's films are too precious for some, but for those of us willing to lose ourselves in them, they're a delight. "The Grand Budapest Hotel" is no different, except that he has added a hint of gravitas to the mix, improving the recipe.`,
+        author: `Bill Goodykoontz`,
+        date: `2015-11-18`,
+        rating: 8.0,
+      }, {
+        text: `I didn't find it amusing, and while I can appreciate the creativity, it's an hour and 40 minutes I wish I could take back.`,
+        author: `Amanda Greever`,
+        date: `2015-11-18`,
+        rating: 8.0,
+      }, {
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+        rating: 7.2,
+      }, {
+        text: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        author: `Paula Fleri-Soler`,
+        date: `2016-12-20`,
+        rating: 7.6,
+      }
+    ]
   },
   {
     title: `We need to talk about Kevin`,
@@ -224,6 +398,7 @@ const testMoviesData = [
     },
     genre: `Drama`,
     releaseDate: 2007,
+    runTime: `1h 23m`,
     rating: {score: 0.3, level: `Very good`, count: 7},
     info: {
       description:
@@ -247,9 +422,37 @@ const testMoviesData = [
         `Пешком с Арбата и до площади Гагарина -\n` +
         `Там хлопну бургер за здоровье Собянина.`,
       director: `Timati`,
-      stars: [`Timati`, `Goof`],
+      stars: [`Timati`, `Goof`, `Bill Murray`, `Edward Norton`, `Jude Law`, `Willem Dafoe`, `Saoirse Ronan`, `Tony Revoloru`, `Tilda Swinton`, `Tom Wilkinson`, `Owen Wilkinson`, `Adrien Brody`, `Ralph Fiennes`, `Jeff Goldblum`],
     },
     preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    reviews: [
+      {
+        text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+        author: `Kate Muir`,
+        date: `2016-12-24`,
+        rating: 8.9,
+      }, {
+        text: `Anderson's films are too precious for some, but for those of us willing to lose ourselves in them, they're a delight. "The Grand Budapest Hotel" is no different, except that he has added a hint of gravitas to the mix, improving the recipe.`,
+        author: `Bill Goodykoontz`,
+        date: `2015-11-18`,
+        rating: 8.0,
+      }, {
+        text: `I didn't find it amusing, and while I can appreciate the creativity, it's an hour and 40 minutes I wish I could take back.`,
+        author: `Amanda Greever`,
+        date: `2015-11-18`,
+        rating: 8.0,
+      }, {
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+        rating: 7.2,
+      }, {
+        text: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        author: `Paula Fleri-Soler`,
+        date: `2016-12-20`,
+        rating: 7.6,
+      }
+    ]
   },
   {
     title: `Revenant`,
@@ -260,6 +463,7 @@ const testMoviesData = [
     },
     genre: `Horror`,
     releaseDate: 2011,
+    runTime: `1h 23m`,
     rating: {score: 0.3, level: `Awesome`, count: 14},
     info: {
       description:
@@ -283,9 +487,37 @@ const testMoviesData = [
         `Пешком с Арбата и до площади Гагарина -\n` +
         `Там хлопну бургер за здоровье Собянина.`,
       director: `Timati`,
-      stars: [`Timati`, `Goof`],
+      stars: [`Timati`, `Goof`, `Bill Murray`, `Edward Norton`, `Jude Law`, `Willem Dafoe`, `Saoirse Ronan`, `Tony Revoloru`, `Tilda Swinton`, `Tom Wilkinson`, `Owen Wilkinson`, `Adrien Brody`, `Ralph Fiennes`, `Jeff Goldblum`],
     },
     preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    reviews: [
+      {
+        text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+        author: `Kate Muir`,
+        date: `2016-12-24`,
+        rating: 8.9,
+      }, {
+        text: `Anderson's films are too precious for some, but for those of us willing to lose ourselves in them, they're a delight. "The Grand Budapest Hotel" is no different, except that he has added a hint of gravitas to the mix, improving the recipe.`,
+        author: `Bill Goodykoontz`,
+        date: `2015-11-18`,
+        rating: 8.0,
+      }, {
+        text: `I didn't find it amusing, and while I can appreciate the creativity, it's an hour and 40 minutes I wish I could take back.`,
+        author: `Amanda Greever`,
+        date: `2015-11-18`,
+        rating: 8.0,
+      }, {
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+        rating: 7.2,
+      }, {
+        text: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        author: `Paula Fleri-Soler`,
+        date: `2016-12-20`,
+        rating: 7.6,
+      }
+    ]
   },
 ];
 

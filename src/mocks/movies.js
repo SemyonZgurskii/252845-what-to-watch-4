@@ -41,6 +41,35 @@ const sourceText = `Это жёсткий город - своя шкала ко�
 Пешком с Арбата и до площади Гагарина -
 Там хлопну бургер за здоровье Собянина.`;
 
+const reviews = [
+  {
+    text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+    author: `Kate Muir`,
+    date: `2016-12-24`,
+    rating: 8.9,
+  }, {
+    text: `Anderson's films are too precious for some, but for those of us willing to lose ourselves in them, they're a delight. "The Grand Budapest Hotel" is no different, except that he has added a hint of gravitas to the mix, improving the recipe.`,
+    author: `Bill Goodykoontz`,
+    date: `2015-11-18`,
+    rating: 8.0,
+  }, {
+    text: `I didn't find it amusing, and while I can appreciate the creativity, it's an hour and 40 minutes I wish I could take back.`,
+    author: `Amanda Greever`,
+    date: `2015-11-18`,
+    rating: 8.0,
+  }, {
+    text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+    author: `Matthew Lickona`,
+    date: `2016-12-20`,
+    rating: 7.2,
+  }, {
+    text: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+    author: `Paula Fleri-Soler`,
+    date: `2016-12-20`,
+    rating: 7.6,
+  }
+];
+
 function getRandomArraysItem(array) {
   const index = Math.floor(Math.random() * array.length);
   return array[index];
@@ -74,16 +103,25 @@ function generateScore() {
   return (Math.floor(Math.random() * MAX_SCORE * 10)) / 10;
 }
 
+function generateRunTime() {
+  const hours = Math.floor(Math.random() * 5) + `h`;
+  const minutes = Math.floor(Math.random() * 60) + `m`;
+
+  return `${hours} ${minutes}`;
+}
+
 function createMovieData(movieName) {
   return {
     title: movieName,
+    genre: getRandomArraysItem(genres),
+    releaseDate: generateReleaseDate(),
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    runTime: generateRunTime(),
     images: {
       card: createPhotoUrl(movieName, Format.CARD),
       smallPoster: createPhotoUrl(movieName, Format.SMALL_POSTER),
       bigPoster: createPhotoUrl(movieName, Format.BIG_POSTER),
     },
-    genre: getRandomArraysItem(genres),
-    releaseDate: generateReleaseDate(),
     rating: {
       score: generateScore(),
       level: getRandomArraysItem(levels),
@@ -92,9 +130,9 @@ function createMovieData(movieName) {
     info: {
       description: sourceText,
       director: `Timati`,
-      stars: [`Timati`, `Goof`],
+      stars: [`Timati`, `Goof`, `Bill Murray`, `Edward Norton`, `Jude Law`, `Willem Dafoe`, `Saoirse Ronan`, `Tony Revoloru`, `Tilda Swinton`, `Tom Wilkinson`, `Owen Wilkinson`, `Adrien Brody`, `Ralph Fiennes`, `Jeff Goldblum`],
     },
-    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    reviews,
   };
 }
 
