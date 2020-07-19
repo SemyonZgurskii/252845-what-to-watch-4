@@ -8,6 +8,7 @@ const testMoviesData = [
     },
     genre: `Fighter`,
     releaseDate: 1994,
+    runTime: `1h 23m`,
     rating: {score: 0.6, level: `Very good`, count: 74},
     info: {
       description:
@@ -31,7 +32,7 @@ const testMoviesData = [
         `Пешком с Арбата и до площади Гагарина -\n` +
         `Там хлопну бургер за здоровье Собянина.`,
       director: `Timati`,
-      stars: [`Timati`, `Goof`],
+      stars: [`Timati`, `Goof`, `Bill Murray`, `Edward Norton`, `Jude Law`, `Willem Dafoe`, `Saoirse Ronan`, `Tony Revoloru`, `Tilda Swinton`, `Tom Wilkinson`, `Owen Wilkinson`, `Adrien Brody`, `Ralph Fiennes`, `Jeff Goldblum`],
     },
     preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
   },
@@ -44,6 +45,7 @@ const testMoviesData = [
     },
     genre: `Fighter`,
     releaseDate: 1992,
+    runTime: `1h 23m`,
     rating: {score: 2.9, level: `Bad`, count: 68},
     info: {
       description:
@@ -67,7 +69,7 @@ const testMoviesData = [
         `Пешком с Арбата и до площади Гагарина -\n` +
         `Там хлопну бургер за здоровье Собянина.`,
       director: `Timati`,
-      stars: [`Timati`, `Goof`],
+      stars: [`Timati`, `Goof`, `Bill Murray`, `Edward Norton`, `Jude Law`, `Willem Dafoe`, `Saoirse Ronan`, `Tony Revoloru`, `Tilda Swinton`, `Tom Wilkinson`, `Owen Wilkinson`, `Adrien Brody`, `Ralph Fiennes`, `Jeff Goldblum`],
     },
     preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
   },
@@ -80,6 +82,7 @@ const testMoviesData = [
     },
     genre: `Drama`,
     releaseDate: 2001,
+    runTime: `1h 23m`,
     rating: {score: 5.1, level: `Awesome`, count: 16},
     info: {
       description:
@@ -103,7 +106,7 @@ const testMoviesData = [
         `Пешком с Арбата и до площади Гагарина -\n` +
         `Там хлопну бургер за здоровье Собянина.`,
       director: `Timati`,
-      stars: [`Timati`, `Goof`],
+      stars: [`Timati`, `Goof`, `Bill Murray`, `Edward Norton`, `Jude Law`, `Willem Dafoe`, `Saoirse Ronan`, `Tony Revoloru`, `Tilda Swinton`, `Tom Wilkinson`, `Owen Wilkinson`, `Adrien Brody`, `Ralph Fiennes`, `Jeff Goldblum`],
     },
     preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
   },
@@ -116,6 +119,7 @@ const testMoviesData = [
     },
     genre: `Fighter`,
     releaseDate: 2004,
+    runTime: `1h 23m`,
     rating: {score: 2, level: `Normal`, count: 28},
     info: {
       description:
@@ -139,7 +143,7 @@ const testMoviesData = [
         `Пешком с Арбата и до площади Гагарина -\n` +
         `Там хлопну бургер за здоровье Собянина.`,
       director: `Timati`,
-      stars: [`Timati`, `Goof`],
+      stars: [`Timati`, `Goof`, `Bill Murray`, `Edward Norton`, `Jude Law`, `Willem Dafoe`, `Saoirse Ronan`, `Tony Revoloru`, `Tilda Swinton`, `Tom Wilkinson`, `Owen Wilkinson`, `Adrien Brody`, `Ralph Fiennes`, `Jeff Goldblum`],
     },
     preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
   },
@@ -152,6 +156,7 @@ const testMoviesData = [
     },
     genre: `Fighter`,
     releaseDate: 2011,
+    runTime: `1h 23m`,
     rating: {score: 7.6, level: `Bad`, count: 60},
     info: {
       description:
@@ -175,7 +180,7 @@ const testMoviesData = [
         `Пешком с Арбата и до площади Гагарина -\n` +
         `Там хлопну бургер за здоровье Собянина.`,
       director: `Timati`,
-      stars: [`Timati`, `Goof`],
+      stars: [`Timati`, `Goof`, `Bill Murray`, `Edward Norton`, `Jude Law`, `Willem Dafoe`, `Saoirse Ronan`, `Tony Revoloru`, `Tilda Swinton`, `Tom Wilkinson`, `Owen Wilkinson`, `Adrien Brody`, `Ralph Fiennes`, `Jeff Goldblum`],
     },
     preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
   },
@@ -188,6 +193,7 @@ const testMoviesData = [
     },
     genre: `Drama`,
     releaseDate: 2002,
+    runTime: `1h 23m`,
     rating: {score: 2.2, level: `Very good`, count: 22},
     info: {
       description:
@@ -211,7 +217,7 @@ const testMoviesData = [
         `Пешком с Арбата и до площади Гагарина -\n` +
         `Там хлопну бургер за здоровье Собянина.`,
       director: `Timati`,
-      stars: [`Timati`, `Goof`],
+      stars: [`Timati`, `Goof`, `Bill Murray`, `Edward Norton`, `Jude Law`, `Willem Dafoe`, `Saoirse Ronan`, `Tony Revoloru`, `Tilda Swinton`, `Tom Wilkinson`, `Owen Wilkinson`, `Adrien Brody`, `Ralph Fiennes`, `Jeff Goldblum`],
     },
     preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
   },
@@ -224,6 +230,7 @@ const testMoviesData = [
     },
     genre: `Drama`,
     releaseDate: 2007,
+    runTime: `1h 23m`,
     rating: {score: 0.3, level: `Very good`, count: 7},
     info: {
       description:
@@ -247,7 +254,7 @@ const testMoviesData = [
         `Пешком с Арбата и до площади Гагарина -\n` +
         `Там хлопну бургер за здоровье Собянина.`,
       director: `Timati`,
-      stars: [`Timati`, `Goof`],
+      stars: [`Timati`, `Goof`, `Bill Murray`, `Edward Norton`, `Jude Law`, `Willem Dafoe`, `Saoirse Ronan`, `Tony Revoloru`, `Tilda Swinton`, `Tom Wilkinson`, `Owen Wilkinson`, `Adrien Brody`, `Ralph Fiennes`, `Jeff Goldblum`],
     },
     preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
   },
@@ -260,6 +267,7 @@ const testMoviesData = [
     },
     genre: `Horror`,
     releaseDate: 2011,
+    runTime: `1h 23m`,
     rating: {score: 0.3, level: `Awesome`, count: 14},
     info: {
       description:
@@ -283,7 +291,7 @@ const testMoviesData = [
         `Пешком с Арбата и до площади Гагарина -\n` +
         `Там хлопну бургер за здоровье Собянина.`,
       director: `Timati`,
-      stars: [`Timati`, `Goof`],
+      stars: [`Timati`, `Goof`, `Bill Murray`, `Edward Norton`, `Jude Law`, `Willem Dafoe`, `Saoirse Ronan`, `Tony Revoloru`, `Tilda Swinton`, `Tom Wilkinson`, `Owen Wilkinson`, `Adrien Brody`, `Ralph Fiennes`, `Jeff Goldblum`],
     },
     preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
   },
