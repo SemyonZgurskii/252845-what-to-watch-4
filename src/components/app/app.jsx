@@ -25,10 +25,9 @@ class App extends PureComponent {
     if (this.state.currentScreen === ScreenMode.OVERVIEW) {
       return (
         <MovieInfo
+          {...this.props}
           movieData={this.state.selectedMovie}
-          moviesData={this.props.moviesData}
           onCardClick={this._handleCardClick}
-          onMovieTitleClick={this.props.onMovieTitleClick}
         />
       );
     }
@@ -57,10 +56,9 @@ class App extends PureComponent {
           </Route>
           <Route exact path="/movie-info">
             <MovieInfo
+              {...this.props}
               movieData={this.props.moviesData[0]}
-              moviesData={this.props.moviesData}
               onCardClick={this._handleCardClick}
-              onMovieTitleClick={this.props.onMovieTitleClick}
             />
           </Route>
         </Switch>
