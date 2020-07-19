@@ -46,7 +46,7 @@ Reviews.propTypes = {
   movieData: PropTypes.shape({
     reviews: PropTypes.arrayOf(
         PropTypes.shape({
-          type: PropTypes.string.isRequired,
+          text: PropTypes.string.isRequired,
           author: PropTypes.string.isRequired,
           date: PropTypes.string.isRequired,
           rating: PropTypes.number.isRequired,

@@ -26,6 +26,9 @@ class App extends PureComponent {
       return (
         <MovieInfo
           movieData={this.state.selectedMovie}
+          moviesData={this.props.moviesData}
+          onCardClick={this._handleCardClick}
+          onMovieTitleClick={this.props.onMovieTitleClick}
         />
       );
     }
@@ -55,6 +58,9 @@ class App extends PureComponent {
           <Route exact path="/movie-info">
             <MovieInfo
               movieData={this.props.moviesData[0]}
+              moviesData={this.props.moviesData}
+              onCardClick={this._handleCardClick}
+              onMovieTitleClick={this.props.onMovieTitleClick}
             />
           </Route>
         </Switch>
@@ -89,6 +95,7 @@ App.propTypes = {
     genre: PropTypes.string.isRequired,
     releaseDate: PropTypes.number.isRequired,
   }),
+  onMovieTitleClick: PropTypes.func.isRequired,
 };
 
 export default App;

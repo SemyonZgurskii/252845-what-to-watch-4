@@ -67,11 +67,6 @@ const reviews = [
     author: `Paula Fleri-Soler`,
     date: `2016-12-20`,
     rating: 7.6,
-  }, {
-    text: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
-    author: `Paula Fleri-Soler`,
-    date: `2016-12-20`,
-    rating: 7.0,
   }
 ];
 
@@ -137,7 +132,7 @@ function createMovieData(movieName) {
       director: `Timati`,
       stars: [`Timati`, `Goof`, `Bill Murray`, `Edward Norton`, `Jude Law`, `Willem Dafoe`, `Saoirse Ronan`, `Tony Revoloru`, `Tilda Swinton`, `Tom Wilkinson`, `Owen Wilkinson`, `Adrien Brody`, `Ralph Fiennes`, `Jeff Goldblum`],
     },
-    // rewiews: [{},{}]
+    reviews,
   };
 }
 

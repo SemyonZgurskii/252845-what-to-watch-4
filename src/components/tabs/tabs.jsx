@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Details from '../details/details.jsx';
 import Reviews from '../reviews/reviews.jsx';
-import Overview from '../ovierview/overview.jsx';
+import Overview from '../overview/overview.jsx';
 
 const Tab = {
   OVERVIEW: `Overview`,
