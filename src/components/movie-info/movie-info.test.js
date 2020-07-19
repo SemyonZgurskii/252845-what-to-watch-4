@@ -8,6 +8,9 @@ describe(`Create MovieInfo snapshot`, () => {
     const MovieInfoElement = renderer.create(
         <MovieInfo
           movieData={testMoviesData[0]}
+          moviesData={testMoviesData}
+          onMovieTitleClick={() => {}}
+          onCardClick={() => {}}
         />
     ).toJSON();
 

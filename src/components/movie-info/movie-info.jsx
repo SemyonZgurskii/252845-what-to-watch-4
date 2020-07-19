@@ -112,7 +112,7 @@ function MovieInfo(props) {
 }
 
 MovieInfo.propTypes = {
-  moviesData: PropTypes.arrayOf(PropTypes.object),
+  moviesData: PropTypes.arrayOf(PropTypes.object).isRequired,
   movieData: PropTypes.shape({
     title: PropTypes.string.isRequired,
     images: PropTypes.shape({
