@@ -29,14 +29,6 @@ function Overview(props) {
 
 Overview.propTypes = {
   movieData: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    images: PropTypes.shape({
-      card: PropTypes.string.isRequired,
-      smallPoster: PropTypes.string.isRequired,
-      bigPoster: PropTypes.string.isRequired,
-    }),
-    genre: PropTypes.string.isRequired,
-    releaseDate: PropTypes.number.isRequired,
     rating: PropTypes.shape({
       score: PropTypes.number.isRequired,
       level: PropTypes.string.isRequired,
