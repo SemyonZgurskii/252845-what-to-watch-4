@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Main from '../main/main.jsx';
 import MovieInfo from '../movie-info/movie-info.jsx';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import {ActionCreator} from '../../reducer.js';
+import {connect} from 'react-redux';
 
 const ScreenMode = {
   MAIN: `main`,
@@ -73,4 +75,16 @@ App.propTypes = {
   onMovieTitleClick: PropTypes.func.isRequired,
 };
 
-export default App;
+const mapStateToProps = (state) => ({
+  activeGenre: state.activeGenre,
+  moviesData: state.filteredMoviesData,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  onFilterChange(genre) {
+    dispatch(ActionCreator.changeFilter(genre));
+  }
+});
+
+export {App};
+export default connect(mapStateToProps, mapDispatchToProps)(App);
