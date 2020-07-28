@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {MAX_FILTERS} from '../../constants.js';
 
 function GenreFilter(props) {
   const {activeGenre, onFilterChange, moviesData} = props;
   const activeClass = `catalog__genres-item--active`;
-  const genres = [...new Set(moviesData.map(({genre}) => genre))];
+  const genres = [...new Set(moviesData.map(({genre}) => genre))]
+    .slice(0, MAX_FILTERS);
 
   return (
     <ul className="catalog__genres-list">
