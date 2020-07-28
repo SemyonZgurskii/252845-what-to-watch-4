@@ -5,7 +5,7 @@ import GenreFilter from '../genre-filter/genre-filter.jsx';
 
 function Main(props) {
   const {title, genre, releaseDate} = props.promoInfo;
-  const {activeGenre, onFilterChange} = props;
+  const {activeGenre, onFilterChange, moviesData} = props;
 
   return (
     <>
@@ -69,6 +69,7 @@ function Main(props) {
           <h2 className="catalog__title visually-hidden">Catalog</h2>
 
           <GenreFilter
+            moviesData={moviesData}
             activeGenre={activeGenre}
             onFilterChange={onFilterChange}
           />
@@ -112,6 +113,7 @@ Main.propTypes = {
   }),
   activeGenre: PropTypes.string.isRequired,
   onFilterChange: PropTypes.func.isRequired,
+  moviesData: PropTypes.array.isRequired,
 };
 
 export default Main;

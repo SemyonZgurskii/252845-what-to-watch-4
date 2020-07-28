@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Genre} from '../../constants.js';
 
 function GenreFilter(props) {
-  const {activeGenre, onFilterChange} = props;
+  const {activeGenre, onFilterChange, moviesData} = props;
   const activeClass = `catalog__genres-item--active`;
-  const genres = Object.values(Genre);
+  const genres = [...new Set(moviesData.map(({genre}) => genre))];
 
   return (
     <ul className="catalog__genres-list">
@@ -27,6 +26,7 @@ function GenreFilter(props) {
 GenreFilter.propTypes = {
   activeGenre: PropTypes.string.isRequired,
   onFilterChange: PropTypes.func.isRequired,
+  moviesData: PropTypes.array.isRequired,
 };
 
 export default GenreFilter;

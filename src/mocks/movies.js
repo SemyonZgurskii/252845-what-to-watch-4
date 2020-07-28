@@ -1,3 +1,5 @@
+import {Genre} from '../constants.js';
+
 const MOVIES_COUNT = 8;
 const MIN_DATE = 1990;
 const DATE_RANGE = 30;
@@ -19,7 +21,7 @@ const Format = {
 };
 
 const levels = [`Bad`, `Normal`, `Good`, `Very good`, `Awesome`];
-const genres = [`Drama`, `Comedy`, `Horror`, `Fighter`];
+const genres = Object.values(Genre);
 
 const sourceText = `Это жёсткий город - своя шкала контрастов.
 Купеческая Мекка, государство в государстве.
