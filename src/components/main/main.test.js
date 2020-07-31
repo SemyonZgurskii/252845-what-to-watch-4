@@ -4,7 +4,7 @@ import Main from './main.jsx';
 
 import {promoInfo} from '../../mocks/movies.js';
 import {testMoviesData} from '../../mocks/testMovies.js';
-import { Genre } from '../../constants.js';
+import {Genre} from '../../constants.js';
 
 const onMovieTitleClick = () => {};
 
