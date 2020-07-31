@@ -14,10 +14,10 @@ describe(`Test reducer`, () => {
   });
 
   it(`should return correctly filtered data`, () => {
-    const expectedData = testInitialState.moviesData
+    const expectedData = testMoviesData
       .filter(({genre}) => genre === Genre.COMEDIES);
 
-    expect(reducer(undefined, ActionCreator.changeFilter(Genre.COMEDIES)).filteredMoviesData).toEqual(expectedData);
+    expect(reducer(testInitialState, ActionCreator.changeFilter(Genre.COMEDIES)).filteredMoviesData).toEqual(expectedData);
   });
 
   it(`If passed genre value is "All",it should return current state`, () => {

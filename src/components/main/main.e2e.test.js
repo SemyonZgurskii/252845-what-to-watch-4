@@ -4,6 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import Main from './main.jsx';
 
 import {moviesData, promoInfo} from '../../mocks/movies.js';
+import {Genre} from '../../constants.js';
 
 Enzyme.configure({
   adapter: new Adapter(),
@@ -15,6 +16,8 @@ describe(`Test Main component's functionality`, () => {
 
     const MainElement = mount(
         <Main
+          activeGenre={Genre.ALL}
+          onFilterChange={() => {}}
           promoInfo={promoInfo}
           moviesData={moviesData}
           onMovieTitleClick={onMovieTitleClick}
@@ -36,6 +39,8 @@ describe(`Test Main component's functionality`, () => {
 
     const MainElement = mount(
         <Main
+          activeGenre={Genre.ALL}
+          onFilterChange={() => {}}
           promoInfo={promoInfo}
           moviesData={moviesData}
           onMovieTitleClick={() => {}}

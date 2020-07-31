@@ -24,7 +24,7 @@ function reducer(state = initialState, action) {
     case ActionType.CHANGE_FILTER:
       const filteredMoviesData = action.payload === Genre.ALL ?
         state.moviesData
-        : moviesData.filter(({genre}) => genre === action.payload);
+        : state.moviesData.filter(({genre}) => genre === action.payload);
 
       return Object.assign({}, state, {
         activeGenre: action.payload,

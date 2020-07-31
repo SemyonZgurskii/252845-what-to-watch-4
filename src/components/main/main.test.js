@@ -4,6 +4,7 @@ import Main from './main.jsx';
 
 import {promoInfo} from '../../mocks/movies.js';
 import {testMoviesData} from '../../mocks/testMovies.js';
+import { Genre } from '../../constants.js';
 
 const onMovieTitleClick = () => {};
 
@@ -12,6 +13,8 @@ describe(`Create Main snapshot`, () => {
     const MainElement = renderer
       .create(
           <Main
+            activeGenre={Genre.ALL}
+            onFilterChange={() => {}}
             promoInfo={promoInfo}
             moviesData={testMoviesData}
             onMovieTitleClick={onMovieTitleClick}
