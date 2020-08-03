@@ -11,29 +11,6 @@ Enzyme.configure({
 });
 
 describe(`Test Main component's functionality`, () => {
-  it(`MovieCard title handler should be executed`, () => {
-    const onMovieTitleClick = jest.fn();
-
-    const MainElement = mount(
-        <Main
-          activeGenre={Genre.ALL}
-          onFilterChange={() => {}}
-          promoInfo={promoInfo}
-          moviesData={moviesData}
-          onMovieTitleClick={onMovieTitleClick}
-          onCardClick={() => {}}
-        />
-    );
-
-    const moviesElements = MainElement.find(`a.small-movie-card__link`);
-
-    moviesElements.forEach((movieElement) => {
-      movieElement.simulate(`click`);
-    });
-
-    expect(onMovieTitleClick.mock.calls.length).toBe(moviesData.length);
-  });
-
   it(`MovieCard and it's title handler should be executed`, () => {
     const onCardClick = jest.fn();
 

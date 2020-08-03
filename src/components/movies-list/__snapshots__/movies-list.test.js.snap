@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Create MoviesList snapshot Should correctly render MoviesList 1`] = `
-Array [
+<div
+  className="catalog__movies-list"
+>
   <article
     className="small-movie-card catalog__movies-card"
     onMouseEnter={[Function]}
@@ -36,7 +38,7 @@ Array [
         The Grand Budapest Hotel
       </a>
     </h3>
-  </article>,
+  </article>
   <article
     className="small-movie-card catalog__movies-card"
     onMouseEnter={[Function]}
@@ -71,7 +73,7 @@ Array [
         Johnny English
       </a>
     </h3>
-  </article>,
+  </article>
   <article
     className="small-movie-card catalog__movies-card"
     onMouseEnter={[Function]}
@@ -106,7 +108,7 @@ Array [
         Fantastic Beasts: The Crimes of Grindelwald
       </a>
     </h3>
-  </article>,
+  </article>
   <article
     className="small-movie-card catalog__movies-card"
     onMouseEnter={[Function]}
@@ -141,7 +143,7 @@ Array [
         Bohemian Rhapsody
       </a>
     </h3>
-  </article>,
+  </article>
   <article
     className="small-movie-card catalog__movies-card"
     onMouseEnter={[Function]}
@@ -176,7 +178,7 @@ Array [
         Macbeth
       </a>
     </h3>
-  </article>,
+  </article>
   <article
     className="small-movie-card catalog__movies-card"
     onMouseEnter={[Function]}
@@ -211,7 +213,7 @@ Array [
         Aviator
       </a>
     </h3>
-  </article>,
+  </article>
   <article
     className="small-movie-card catalog__movies-card"
     onMouseEnter={[Function]}
@@ -246,7 +248,7 @@ Array [
         We need to talk about Kevin
       </a>
     </h3>
-  </article>,
+  </article>
   <article
     className="small-movie-card catalog__movies-card"
     onMouseEnter={[Function]}
@@ -281,6 +283,6 @@ Array [
         Revenant
       </a>
     </h3>
-  </article>,
-]
+  </article>
+</div>
 `;
