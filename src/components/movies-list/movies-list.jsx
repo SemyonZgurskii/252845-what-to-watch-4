@@ -6,8 +6,8 @@ import ShowMore from '../show-more/show-more.jsx';
 const MOVIES_COUNT_SUMMAND = 8;
 
 function getShowedMoviesCount(currentMoviesCount, allMoviesCount) {
-  if (currentMoviesCount + MOVIES_COUNT_SUMMAND > allMoviesCount.length) {
-    return allMoviesCount.length;
+  if (currentMoviesCount + MOVIES_COUNT_SUMMAND > allMoviesCount) {
+    return allMoviesCount;
   }
 
   return currentMoviesCount + MOVIES_COUNT_SUMMAND;
@@ -19,10 +19,6 @@ class MoviesList extends PureComponent {
 
     this.state = {
       currentMovie: null,
-
-      // TODO: преобразовать showedMovies в число. Число должно вычисляться следующим образом:
-      // текущее_количество_показываемых_фильмов + слагаемое
-      // текущее_количество_показываемых_фильмов должно быть первым параметром функции
       showedMoviesCount: getShowedMoviesCount(0, this.props.moviesData.length),
     };
 
