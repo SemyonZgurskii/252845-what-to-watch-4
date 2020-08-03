@@ -1,6 +1,6 @@
 import {Genre} from '../constants.js';
 
-const MOVIES_COUNT = 8;
+const MOVIES_COUNT = 16;
 const MIN_DATE = 1990;
 const DATE_RANGE = 30;
 const MAX_SCORE = 10;
