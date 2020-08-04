@@ -74,17 +74,10 @@ function Main(props) {
             onFilterChange={onFilterChange}
           />
 
-          <div className="catalog__movies-list">
+          <MoviesList
+            {...props}
+          />
 
-            <MoviesList
-              {...props}
-            />
-
-          </div>
-
-          <div className="catalog__more">
-            <button className="catalog__button" type="button">Show more</button>
-          </div>
         </section>
 
         <footer className="page-footer">

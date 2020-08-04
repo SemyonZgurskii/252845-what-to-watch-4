@@ -83,14 +83,12 @@ function MovieInfo(props) {
         <section className="catalog catalog--like-this">
           <h2 className="catalog__title">More like this</h2>
 
-          <div className="catalog__movies-list">
-            <MoviesList
-              onCardClick={props.onCardClick}
-              onMovieTitleClick={props.onMovieTitleClick}
-              moviesData={similarMovies}
-            />
+          <MoviesList
+            onCardClick={props.onCardClick}
+            onMovieTitleClick={props.onMovieTitleClick}
+            moviesData={similarMovies}
+          />
 
-          </div>
         </section>
 
         <footer className="page-footer">
