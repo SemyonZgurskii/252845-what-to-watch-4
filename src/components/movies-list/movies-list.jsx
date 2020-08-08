@@ -2,8 +2,10 @@ import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import MovieCard from '../movie-card/movie-card.jsx';
 import ShowMore from '../show-more/show-more.jsx';
+import withVideo from '../../hocs/with-video/with-video.jsx';
 
 const MOVIES_COUNT_SUMMAND = 8;
+const MovieCardWrapped = withVideo(MovieCard);
 
 function getShowedMoviesCount(currentMoviesCount, allMoviesCount) {
   if (currentMoviesCount + MOVIES_COUNT_SUMMAND > allMoviesCount) {
@@ -50,7 +52,7 @@ class MoviesList extends PureComponent {
         <div className="catalog__movies-list">
           {showedMovies.map((movieData, index) => {
             return (
-              <MovieCard
+              <MovieCardWrapped
                 movieData={movieData}
                 onMovieTitleClick={onMovieTitleClick}
                 onCardClick={onCardClick}

@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import VideoPlayer from '../video-player/video-player.jsx';
-
 
 function MovieCard(props) {
-  const {movieData, onMovieTitleClick, onMouseEnter, onCardClick, isPlaying, onMouseOut} = props;
-  const {title, images, preview} = movieData;
+  const {movieData, onMovieTitleClick, onMouseEnter, onCardClick, isPlaying, onMouseOut, children} = props;
+  const {title} = movieData;
 
   return (
     <article className="small-movie-card catalog__movies-card"
@@ -15,12 +13,7 @@ function MovieCard(props) {
       <div className="small-movie-card__image"
         onClick = {() => onCardClick(movieData)}
       >
-        <VideoPlayer
-          previewImage = {images.card}
-          previewVideo = {preview}
-          title = {title}
-          isPlaying = {isPlaying}
-        />
+        {children}
       </div>
       <h3 className="small-movie-card__title">
         <a
