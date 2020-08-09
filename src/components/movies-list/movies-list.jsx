@@ -20,11 +20,9 @@ class MoviesList extends PureComponent {
     super(props);
 
     this.state = {
-      currentMovie: null,
       showedMoviesCount: getShowedMoviesCount(0, this.props.moviesData.length),
     };
 
-    this.timerID = null;
     this._handleShowMoreButtonClick = this._handleShowMoreButtonClick.bind(this);
   }
 
@@ -57,18 +55,6 @@ class MoviesList extends PureComponent {
                 onMovieTitleClick={onMovieTitleClick}
                 onCardClick={onCardClick}
                 key={movieData.title + index}
-                isPlaying={this.state.currentMovie === movieData}
-                onMouseEnter={(movieInfo) => {
-                  this.timerID = setTimeout(() => this.setState({
-                    currentMovie: movieInfo,
-                  }), 1000);
-                }}
-                onMouseOut={() => {
-                  this.setState({
-                    currentMovie: null,
-                  });
-                  clearTimeout(this.timerID);
-                }}
               />
             );
           })}

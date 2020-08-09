@@ -8,16 +8,17 @@ function withVideo(Component) {
       super(props);
 
       this.state = {
-        isPlaying: this.props.isPlaying,
+        isPlaying: false,
       };
 
+      this._timerId = null;
       this._videoRef = createRef();
     }
 
     componentDidUpdate() {
       const video = this._videoRef.current;
 
-      if (this.props.isPlaying) {
+      if (this.state.isPlaying) {
         video.src = this.props.movieData.preview;
         video.play();
       } else {
@@ -33,6 +34,17 @@ function withVideo(Component) {
       return (
         <Component
           {...this.props}
+          onMouseEnter={() => {
+            this._timerId = setTimeout(() => this.setState({
+              isPlaying: true,
+            }), 1000);
+          }}
+          onMouseOut={() => {
+            this.setState({
+              isPlaying: false,
+            });
+            clearTimeout(this._timerId);
+          }}
         >
           <video width="280" height="175"
             preload="none"
@@ -59,7 +71,6 @@ function withVideo(Component) {
       }),
       preview: PropTypes.string.isRequired,
     }),
-    isPlaying: PropTypes.bool.isRequired,
   };
 
   return WithVideo;

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function MovieCard(props) {
-  const {movieData, onMovieTitleClick, onMouseEnter, onCardClick, isPlaying, onMouseOut, children} = props;
+  const {movieData, onMovieTitleClick, onMouseEnter, onCardClick, onMouseOut, children} = props;
   const {title} = movieData;
 
   return (
@@ -40,8 +40,11 @@ MovieCard.propTypes = {
   onMovieTitleClick: PropTypes.func.isRequired,
   onMouseEnter: PropTypes.func.isRequired,
   onCardClick: PropTypes.func.isRequired,
-  isPlaying: PropTypes.bool.isRequired,
   onMouseOut: PropTypes.func.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired,
 };
 
 export default MovieCard;
