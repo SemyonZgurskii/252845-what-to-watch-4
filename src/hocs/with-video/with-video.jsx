@@ -27,6 +27,10 @@ function withVideo(Component) {
       }
     }
 
+    componentWillUnmount() {
+      clearTimeout(this.timerID);
+    }
+
     render() {
       const {title, images, preview} = this.props.movieData;
       const {card} = images;

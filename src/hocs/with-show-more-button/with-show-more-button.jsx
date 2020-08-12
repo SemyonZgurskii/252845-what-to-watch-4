@@ -59,7 +59,6 @@ function withShowMoreButton(Component) {
 
   WithShowMoreButton.propTypes = {
     moviesData: PropTypes.array.isRequired,
-    onClick: PropTypes.func.isRequired,
   };
 
   return WithShowMoreButton;

@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MoviesList from '../movies-list/movies-list.jsx';
 import GenreFilter from '../genre-filter/genre-filter.jsx';
+import withShowMoreButton from '../../hocs/with-show-more-button/with-show-more-button.jsx';
+
+const MoviesListWrapped = withShowMoreButton(MoviesList);
 
 function Main(props) {
   const {title, genre, releaseDate} = props.promoInfo;
@@ -74,7 +77,7 @@ function Main(props) {
             onFilterChange={onFilterChange}
           />
 
-          <MoviesList
+          <MoviesListWrapped
             {...props}
           />
 
