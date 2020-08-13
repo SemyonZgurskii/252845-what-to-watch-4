@@ -5,7 +5,6 @@ import ShowMore from '../../components/show-more/show-more.jsx';
 const MOVIES_COUNT_SUMMAND = 8;
 
 function getShowedMoviesCount(currentMoviesCount, allMoviesCount) {
-  console.log(allMoviesCount);
   if (currentMoviesCount + MOVIES_COUNT_SUMMAND > allMoviesCount) {
     return allMoviesCount;
   }

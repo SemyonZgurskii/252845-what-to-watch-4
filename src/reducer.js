@@ -32,7 +32,7 @@ const ActionCreator = {
   //   }));
   // }
 };
-
+// TODO: настроить корректное функционирование коллбека для смены экрана при клике на карточку фильма
 function reducer(state = initialState, action) {
   switch (action.type) {
     case ActionType.CHANGE_FILTER:

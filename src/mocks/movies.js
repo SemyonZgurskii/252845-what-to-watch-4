@@ -21,7 +21,7 @@ const Format = {
 };
 
 const levels = [`Bad`, `Normal`, `Good`, `Very good`, `Awesome`];
-const genres = Object.values(Genre);
+const genres = Object.values(Genre).filter((genre) => genre !== Genre.ALL);
 
 const sourceText = `Это жёсткий город - своя шкала контрастов.
 Купеческая Мекка, государство в государстве.
