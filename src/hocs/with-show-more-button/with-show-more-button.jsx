@@ -5,6 +5,7 @@ import ShowMore from '../../components/show-more/show-more.jsx';
 const MOVIES_COUNT_SUMMAND = 8;
 
 function getShowedMoviesCount(currentMoviesCount, allMoviesCount) {
+  console.log(allMoviesCount);
   if (currentMoviesCount + MOVIES_COUNT_SUMMAND > allMoviesCount) {
     return allMoviesCount;
   }
@@ -18,7 +19,7 @@ function withShowMoreButton(Component) {
       super(props);
 
       this.state = {
-        showedMoviesCount: getShowedMoviesCount(0, this.props.moviesData.length),
+        showedMoviesCount: getShowedMoviesCount(0, this.props.filteredMoviesData.length),
       };
 
       this._handleShowMoreButtonClick = this._handleShowMoreButtonClick.bind(this);
@@ -26,20 +27,28 @@ function withShowMoreButton(Component) {
 
     _handleShowMoreButtonClick() {
       this.setState((prevState) => {
-        const {moviesData} = this.props;
+        const {filteredMoviesData} = this.props;
         const {showedMoviesCount} = prevState;
 
         return {
-          showedMoviesCount: getShowedMoviesCount(showedMoviesCount, moviesData.length)
+          showedMoviesCount: getShowedMoviesCount(showedMoviesCount, filteredMoviesData.length),
         };
       });
     }
 
+    componentDidUpdate(prevProps, prevState) {
+      if (prevProps.filteredMoviesData !== this.props.filteredMoviesData) {
+        this.setState({
+          showedMoviesCount: getShowedMoviesCount(prevState.showedMoviesCount, this.props.filteredMoviesData.length),
+        });
+      }
+    }
+
     render() {
-      const {moviesData} = this.props;
-      const showedMovies = moviesData.slice(0, this.state.showedMoviesCount);
+      const {filteredMoviesData} = this.props;
+      const showedMovies = filteredMoviesData.slice(0, this.state.showedMoviesCount);
       const correctedProps = Object.assign({}, this.props, {
-        moviesData: showedMovies,
+        filteredMoviesData: showedMovies,
       });
 
       return (
@@ -47,7 +56,7 @@ function withShowMoreButton(Component) {
           {...correctedProps}
         >
           {
-            this.state.showedMoviesCount !== this.props.moviesData.length &&
+            this.state.showedMoviesCount !== filteredMoviesData.length &&
               <ShowMore
                 onClick={this._handleShowMoreButtonClick}
               />
@@ -58,7 +67,7 @@ function withShowMoreButton(Component) {
   }
 
   WithShowMoreButton.propTypes = {
-    moviesData: PropTypes.array.isRequired,
+    filteredMoviesData: PropTypes.array.isRequired,
   };
 
   return WithShowMoreButton;

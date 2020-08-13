@@ -5,31 +5,27 @@ import MovieInfo from '../movie-info/movie-info.jsx';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import {ActionCreator} from '../../reducer.js';
 import {connect} from 'react-redux';
-
-const ScreenMode = {
-  MAIN: `main`,
-  OVERVIEW: `overview`,
-};
+import {ScreenMode} from '../../constants.js';
 
 class App extends PureComponent {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
 
-    this.state = {
-      selectedMovie: null,
-      currentScreen: ScreenMode.MAIN,
-    };
+  //   this.state = {
+  //     selectedMovie: null,
+  //     currentScreen: ScreenMode.MAIN,
+  //   };
 
-    this._handleCardClick = this._handleCardClick.bind(this);
-  }
+  //   this._handleCardClick = this._handleCardClick.bind(this);
+  // }
 
   _renderCurrentScreen() {
-    if (this.state.currentScreen === ScreenMode.OVERVIEW) {
+    if (this.props.currentScreen === ScreenMode.OVERVIEW) {
       return (
         <MovieInfo
           {...this.props}
-          movieData={this.state.selectedMovie}
-          onCardClick={this._handleCardClick}
+          movieData={this.props.selectedMovie}
+          onCardClick={this.props.onMovieSelect}
         />
       );
     }
@@ -37,17 +33,17 @@ class App extends PureComponent {
     return (
       <Main
         {...this.props}
-        onCardClick={this._handleCardClick}
+        onCardClick={this.props.onMovieSelect}
       />
     );
   }
 
-  _handleCardClick(movieData) {
-    this.setState(() => ({
-      currentScreen: ScreenMode.OVERVIEW,
-      selectedMovie: movieData,
-    }));
-  }
+  // _handleCardClick(movieData) {
+  //   this.setState(() => ({
+  //     currentScreen: ScreenMode.OVERVIEW,
+  //     selectedMovie: movieData,
+  //   }));
+  // }
 
   render() {
     return (
@@ -60,7 +56,7 @@ class App extends PureComponent {
             <MovieInfo
               {...this.props}
               movieData={this.props.moviesData[0]}
-              onCardClick={this._handleCardClick}
+              onCardClick={this.props.onMovieSelect}
             />
           </Route>
         </Switch>
@@ -77,12 +73,18 @@ App.propTypes = {
 
 const mapStateToProps = (state) => ({
   activeGenre: state.activeGenre,
-  moviesData: state.filteredMoviesData,
+  filteredMoviesData: state.filteredMoviesData,
+  moviesData: state.moviesData,
+  currentMovie: state.currentMovie,
+  selectedMovie: null,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   onFilterChange(genre) {
     dispatch(ActionCreator.changeFilter(genre));
+  },
+  onMovieSelect(movieData) {
+    dispatch(ActionCreator.changeScreen(movieData));
   }
 });
 

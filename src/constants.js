@@ -12,3 +12,8 @@ export const Genre = {
 };
 
 export const MAX_FILTERS = 9;
+
+export const ScreenMode = {
+  MAIN: `main`,
+  OVERVIEW: `overview`,
+};
