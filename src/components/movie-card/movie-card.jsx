@@ -48,10 +48,4 @@ MovieCard.propTypes = {
   ]).isRequired,
 };
 
-function mapStateToProps(state) {
-  return {
-    
-  }
-}
-
 export default connect()(MovieCard);

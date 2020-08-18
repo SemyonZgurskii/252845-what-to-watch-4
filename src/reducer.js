@@ -1,5 +1,5 @@
 import {moviesData} from './mocks/movies.js';
-import {Genre, ScreenMode} from './constants.js';
+import {Genre, ScreenMode, MAX_OVERVIEW_MOVIES} from './constants.js';
 
 const initialState = {
   activeGenre: Genre.ALL,
@@ -13,8 +13,6 @@ const ActionType = {
   CHANGE_FILTER: `CHANGE_FILTER`,
   CHANGE_SCREEN: `CHANGE_SCREEN`,
 };
-
-// TODO: обеспечить рендер нужного количества карточек при рендере ScreenMode.OVERVIEW
 
 const ActionCreator = {
   changeFilter: (genre) => ({
@@ -41,9 +39,14 @@ function reducer(state = initialState, action) {
       });
 
     case ActionType.CHANGE_SCREEN:
+      const moviesForOverview = state.moviesData
+        .filter(({genre}) => genre === action.payload.genre)
+        .slice(0, MAX_OVERVIEW_MOVIES);
+
       return Object.assign({}, state, {
         selectedMovie: action.payload,
         currentScreen: ScreenMode.OVERVIEW,
+        filteredMoviesData: moviesForOverview,
       });
   }
 

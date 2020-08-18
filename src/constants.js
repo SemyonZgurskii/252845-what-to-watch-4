@@ -1,3 +1,6 @@
+export const MAX_FILTERS = 9;
+export const MAX_OVERVIEW_MOVIES = 4;
+
 export const Genre = {
   ALL: `All genres`,
   COMEDIES: `Comedies`,
@@ -10,8 +13,6 @@ export const Genre = {
   SCI_FI: `Sci-Fi`,
   THRILLERS: `Thrillers`,
 };
-
-export const MAX_FILTERS = 9;
 
 export const ScreenMode = {
   MAIN: `main`,

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MovieCard from '../movie-card/movie-card.jsx';
 import withVideo from '../../hocs/with-video/with-video.jsx';
-import { ScreenMode } from '../../constants.js';
 
 const MovieCardWrapped = withVideo(MovieCard);
 
