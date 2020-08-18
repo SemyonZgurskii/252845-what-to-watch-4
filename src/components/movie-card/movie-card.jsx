@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 
 function MovieCard(props) {
   const {movieData, onMovieTitleClick, onMouseEnter, onCardClick, onMouseOut, children} = props;
@@ -47,4 +48,10 @@ MovieCard.propTypes = {
   ]).isRequired,
 };
 
-export default MovieCard;
+function mapStateToProps(state) {
+  return {
+    
+  }
+}
+
+export default connect()(MovieCard);

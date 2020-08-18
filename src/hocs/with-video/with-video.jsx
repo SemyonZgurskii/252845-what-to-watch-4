@@ -28,7 +28,9 @@ function withVideo(Component) {
     }
 
     componentWillUnmount() {
-      clearTimeout(this.timerID);
+      if (this._timerId) {
+        clearTimeout(this._timerId);
+      }
     }
 
     render() {

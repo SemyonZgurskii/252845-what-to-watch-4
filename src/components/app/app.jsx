@@ -8,24 +8,15 @@ import {connect} from 'react-redux';
 import {ScreenMode} from '../../constants.js';
 
 class App extends PureComponent {
-  // constructor(props) {
-  //   super(props);
-
-  //   this.state = {
-  //     selectedMovie: null,
-  //     currentScreen: ScreenMode.MAIN,
-  //   };
-
-  //   this._handleCardClick = this._handleCardClick.bind(this);
-  // }
-
   _renderCurrentScreen() {
-    if (this.props.currentScreen === ScreenMode.OVERVIEW) {
+    const {currentScreen, selectedMovie, onMovieSelect} = this.props;
+
+    if (currentScreen === ScreenMode.OVERVIEW) {
       return (
         <MovieInfo
           {...this.props}
-          movieData={this.props.selectedMovie}
-          onCardClick={this.props.onMovieSelect}
+          movieData={selectedMovie}
+          onCardClick={onMovieSelect}
         />
       );
     }
@@ -33,19 +24,14 @@ class App extends PureComponent {
     return (
       <Main
         {...this.props}
-        onCardClick={this.props.onMovieSelect}
+        onCardClick={onMovieSelect}
       />
     );
   }
 
-  // _handleCardClick(movieData) {
-  //   this.setState(() => ({
-  //     currentScreen: ScreenMode.OVERVIEW,
-  //     selectedMovie: movieData,
-  //   }));
-  // }
-
   render() {
+    const {moviesData, onMovieSelect} = this.props;
+
     return (
       <BrowserRouter>
         <Switch>
@@ -55,8 +41,8 @@ class App extends PureComponent {
           <Route exact path="/movie-info">
             <MovieInfo
               {...this.props}
-              movieData={this.props.moviesData[0]}
-              onCardClick={this.props.onMovieSelect}
+              movieData={moviesData[0]}
+              onCardClick={onMovieSelect}
             />
           </Route>
         </Switch>
@@ -67,16 +53,22 @@ class App extends PureComponent {
 
 App.propTypes = {
   moviesData: PropTypes.arrayOf(PropTypes.object),
+  onMovieSelect: PropTypes.func.isRequired,
   promoInfo: PropTypes.object,
   onMovieTitleClick: PropTypes.func.isRequired,
+  currentScreen: PropTypes.string.isRequired,
+  selectedMovie: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.instanceOf(null)
+  ]),
 };
 
 const mapStateToProps = (state) => ({
   activeGenre: state.activeGenre,
   filteredMoviesData: state.filteredMoviesData,
   moviesData: state.moviesData,
-  currentMovie: state.currentMovie,
-  selectedMovie: null,
+  selectedMovie: state.selectedMovie,
+  currentScreen: state.currentScreen,
 });
 
 const mapDispatchToProps = (dispatch) => ({

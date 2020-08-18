@@ -5,9 +5,9 @@ import Tabs from '../tabs/tabs.jsx';
 import MoviesList from '../movies-list/movies-list.jsx';
 
 function MovieInfo(props) {
-  const {title, images, genre, releaseDate} = props.movieData;
+  const {moviesData, movieData, filteredMoviesData, onMovieTitleClick, onCardClick} = props;
+  const {title, images, genre, releaseDate} = movieData;
   const {bigPoster, smallPoster} = images;
-  const {moviesData} = props;
 
   const similarMovies = moviesData.filter((movie) => movie.genre === props.movieData.genre);
 
@@ -84,9 +84,10 @@ function MovieInfo(props) {
           <h2 className="catalog__title">More like this</h2>
 
           <MoviesList
-            onCardClick={props.onCardClick}
-            onMovieTitleClick={props.onMovieTitleClick}
+            onCardClick={onCardClick}
+            onMovieTitleClick={onMovieTitleClick}
             moviesData={similarMovies}
+            filteredMoviesData={filteredMoviesData}
           />
 
         </section>
@@ -122,7 +123,8 @@ MovieInfo.propTypes = {
     releaseDate: PropTypes.number.isRequired,
   }),
   onMovieTitleClick: PropTypes.func.isRequired,
-  onCardClick: PropTypes.func.isRequired
+  onCardClick: PropTypes.func.isRequired,
+  filteredMoviesData: PropTypes.array.isRequired,
 };
 
 export default MovieInfo;

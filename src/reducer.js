@@ -14,6 +14,8 @@ const ActionType = {
   CHANGE_SCREEN: `CHANGE_SCREEN`,
 };
 
+// TODO: обеспечить рендер нужного количества карточек при рендере ScreenMode.OVERVIEW
+
 const ActionCreator = {
   changeFilter: (genre) => ({
     type: ActionType.CHANGE_FILTER,
@@ -24,15 +26,8 @@ const ActionCreator = {
     type: ActionType.CHANGE_SCREEN,
     payload: movieData,
   }),
-
-  // _handleCardClick(movieData) {
-  //   this.setState(() => ({
-  //     currentScreen: ScreenMode.OVERVIEW,
-  //     selectedMovie: movieData,
-  //   }));
-  // }
 };
-// TODO: настроить корректное функционирование коллбека для смены экрана при клике на карточку фильма
+
 function reducer(state = initialState, action) {
   switch (action.type) {
     case ActionType.CHANGE_FILTER:
