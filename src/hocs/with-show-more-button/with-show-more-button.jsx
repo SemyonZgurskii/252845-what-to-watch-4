@@ -17,7 +17,6 @@ function withShowMoreButton(Component) {
     constructor(props) {
       super(props);
 
-      // TODO: настроить отображение корректного количества карточек при смене фильтра
       this.state = {
         showedMoviesCount: getShowedMoviesCount(0, this.props.filteredMoviesData.length),
       };
@@ -36,10 +35,10 @@ function withShowMoreButton(Component) {
       });
     }
 
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate(prevProps) {
       if (prevProps.filteredMoviesData !== this.props.filteredMoviesData) {
         this.setState({
-          showedMoviesCount: getShowedMoviesCount(prevState.showedMoviesCount, this.props.filteredMoviesData.length),
+          showedMoviesCount: getShowedMoviesCount(0, this.props.filteredMoviesData.length),
         });
       }
     }
