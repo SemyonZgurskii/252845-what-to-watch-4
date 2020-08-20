@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 
 import Tabs from '../tabs/tabs.jsx';
 import MoviesList from '../movies-list/movies-list.jsx';
+import withActiveItem from '../../hocs/with-active-item/with-active-item.jsx';
+
+const TabsWrapped = withActiveItem(Tabs);
 
 function MovieInfo(props) {
   const {moviesData, movieData, filteredMoviesData, onMovieTitleClick, onCardClick} = props;
@@ -71,8 +74,8 @@ function MovieInfo(props) {
             </div>
 
             <div className="movie-card__desc">
-              <Tabs
-                movieData={props.movieData}
+              <TabsWrapped
+                movieData={movieData}
               />
             </div>
           </div>
