@@ -1,17 +1,25 @@
-import {moviesData} from './mocks/movies.js';
 import {Genre, ScreenMode, MAX_OVERVIEW_MOVIES} from './constants.js';
+import {convertData} from './adapter/data.js';
+
+const AuthorizationStatus = {
+  AUTH: `AUTH`,
+  NO_AUTH: `NO_AUTH`,
+};
 
 const initialState = {
   activeGenre: Genre.ALL,
-  moviesData,
-  filteredMoviesData: moviesData,
+  moviesData: [],
+  filteredMoviesData: [],
   selectedMovie: null,
   currentScreen: ScreenMode.MAIN,
+  authorizationStatus: AuthorizationStatus.NO_AUTH,
 };
 
 const ActionType = {
   CHANGE_FILTER: `CHANGE_FILTER`,
   CHANGE_SCREEN: `CHANGE_SCREEN`,
+  LOAD_MOVIES: `LOAD_MOVIES`,
+  REQUIRED_AUTHORIZATION: `REQUIRED_AUTHORIZATION`,
 };
 
 const ActionCreator = {
@@ -24,6 +32,30 @@ const ActionCreator = {
     type: ActionType.CHANGE_SCREEN,
     payload: movieData,
   }),
+
+  loadMovies: (movies) => ({
+    type: ActionType.LOAD_MOVIES,
+    payload: movies,
+  }),
+
+  requireAuthorization: (status) => {
+    return {
+      type: ActionType.REQUIRED_AUTHORIZATION,
+      payload: status,
+    };
+  }
+};
+
+const Operation = {
+  loadMovies: () => (dispatch, getState, api) => {
+    return api.get(`/films`)
+      .then((response) => {
+        return response.data.map(convertData);
+      })
+      .then((response) => {
+        dispatch(ActionCreator.loadMovies(response));
+      });
+  }
 };
 
 function reducer(state = initialState, action) {
@@ -48,9 +80,19 @@ function reducer(state = initialState, action) {
         currentScreen: ScreenMode.OVERVIEW,
         filteredMoviesData: moviesForOverview,
       });
+
+    case ActionType.REQUIRED_AUTHORIZATION:
+      return Object.assign({}, state, {
+        authorizationStatus: action.payload,
+      });
+
+    case ActionType.LOAD_MOVIES:
+      return Object.assign({}, state, {
+        moviesData: action.payload,
+      });
   }
 
   return state;
 }
 
-export {reducer, ActionType, ActionCreator};
+export {reducer, Operation, ActionType, ActionCreator, AuthorizationStatus};
