@@ -2,23 +2,33 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './components/app/app.jsx';
+import {createAPI} from './api.js';
 import {promoInfo} from './mocks/movies.js';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware, compose} from 'redux';
 import {Provider} from 'react-redux';
-import {reducer} from './reducer.js';
+import {reducer, ActionCreator, Operation, AuthorizationStatus} from './reducer.js';
+import thunkMiddleware from 'redux-thunk';
 
-const onMovieTitleClick = () => {};
+const onUnauthorized = () => {
+  store.dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.NO_AUTH));
+};
+
+const api = createAPI(onUnauthorized);
 
 const store = createStore(
     reducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : (f) => f
+    compose(
+        applyMiddleware(thunkMiddleware.withExtraArgument(api)),
+        window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : (f) => f
+    )
 );
+
+store.dispatch(Operation.loadMovies());
 
 ReactDOM.render(
     <Provider store={store}>
       <App
         promoInfo = {promoInfo}
-        onMovieTitleClick = {onMovieTitleClick}
       />
     </Provider>,
     document.querySelector(`#root`)
