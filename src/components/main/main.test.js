@@ -6,8 +6,6 @@ import {promoInfo} from '../../mocks/movies.js';
 import {testMoviesData} from '../../mocks/testMovies.js';
 import {Genre} from '../../constants.js';
 
-const onMovieTitleClick = () => {};
-
 describe(`Create Main snapshot`, () => {
   it(`Should correctly render Main`, () => {
     const MainElement = renderer
@@ -17,7 +15,6 @@ describe(`Create Main snapshot`, () => {
             onFilterChange={() => {}}
             promoInfo={promoInfo}
             moviesData={testMoviesData}
-            onMovieTitleClick={onMovieTitleClick}
             onCardClick={() => {}}
           />
       )

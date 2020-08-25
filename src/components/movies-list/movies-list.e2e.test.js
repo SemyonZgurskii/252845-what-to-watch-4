@@ -11,12 +11,9 @@ Enzyme.configure({
 
 describe(`Test MoviesList component's functionality`, () => {
   it(`onMouseEnter function should return correct value`, () => {
-    const onMovieTitleClick = jest.fn();
-
     const MoviesListElement = mount(
         <MoviesList
           onCardClick={() => {}}
-          onMovieTitleClick={onMovieTitleClick}
           moviesData={moviesData}
         />
     );

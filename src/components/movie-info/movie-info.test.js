@@ -9,7 +9,6 @@ describe(`Create MovieInfo snapshot`, () => {
         <MovieInfo
           movieData={testMoviesData[0]}
           moviesData={testMoviesData}
-          onMovieTitleClick={() => {}}
           onCardClick={() => {}}
         />
     ).toJSON();

@@ -10,12 +10,10 @@ Enzyme.configure({
 
 describe(`Test MovieCard component's functionality`, () => {
   it(`data should be correct`, () => {
-    const onMovieTitleClick = jest.fn();
 
     const MovieCardElement = mount(
         <MovieCard
           isPlaying={true}
-          onMovieTitleClick={onMovieTitleClick}
           onCardClick={() => {}}
           movieData={moviesData[1]}
           onMouseEnter={() => {}}

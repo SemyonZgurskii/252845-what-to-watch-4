@@ -6,7 +6,7 @@ import withVideo from '../../hocs/with-video/with-video.jsx';
 const MovieCardWrapped = withVideo(MovieCard);
 
 function MoviesList(props) {
-  const {filteredMoviesData, onMovieTitleClick, onCardClick, children} = props;
+  const {filteredMoviesData, onCardClick, children} = props;
 
   return (
     <>
@@ -15,7 +15,6 @@ function MoviesList(props) {
           return (
             <MovieCardWrapped
               movieData={movieData}
-              onMovieTitleClick={onMovieTitleClick}
               onCardClick={onCardClick}
               key={movieData.title + index}
             />
@@ -29,7 +28,6 @@ function MoviesList(props) {
 
 MoviesList.propTypes = {
   filteredMoviesData: PropTypes.array.isRequired,
-  onMovieTitleClick: PropTypes.func.isRequired,
   onCardClick: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),

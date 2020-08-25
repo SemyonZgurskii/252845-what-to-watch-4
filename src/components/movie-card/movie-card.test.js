@@ -10,7 +10,6 @@ describe(`Create MovieCard snapshot`, () => {
           isPlaying={true}
           onCardClick={() => {}}
           movieData = {testMoviesData[0]}
-          onMovieTitleClick = {() => {}}
           onMouseEnter = {() => {}}
           onMouseOut={() => {}}
         />

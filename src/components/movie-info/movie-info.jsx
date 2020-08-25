@@ -8,7 +8,7 @@ import withActiveItem from '../../hocs/with-active-item/with-active-item.jsx';
 const TabsWrapped = withActiveItem(Tabs);
 
 function MovieInfo(props) {
-  const {moviesData, movieData, filteredMoviesData, onMovieTitleClick, onCardClick} = props;
+  const {moviesData, movieData, filteredMoviesData, onCardClick} = props;
   const {title, images, genre, releaseDate} = movieData;
   const {bigPoster, smallPoster} = images;
 
@@ -88,7 +88,6 @@ function MovieInfo(props) {
 
           <MoviesList
             onCardClick={onCardClick}
-            onMovieTitleClick={onMovieTitleClick}
             moviesData={similarMovies}
             filteredMoviesData={filteredMoviesData}
           />
@@ -125,7 +124,6 @@ MovieInfo.propTypes = {
     genre: PropTypes.string.isRequired,
     releaseDate: PropTypes.number.isRequired,
   }),
-  onMovieTitleClick: PropTypes.func.isRequired,
   onCardClick: PropTypes.func.isRequired,
   filteredMoviesData: PropTypes.array.isRequired,
 };

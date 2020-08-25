@@ -20,7 +20,6 @@ describe(`Test Main component's functionality`, () => {
           onFilterChange={() => {}}
           promoInfo={promoInfo}
           moviesData={moviesData}
-          onMovieTitleClick={() => {}}
           onCardClick={onCardClick}
         />
     );

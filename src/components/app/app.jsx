@@ -55,7 +55,6 @@ App.propTypes = {
   moviesData: PropTypes.arrayOf(PropTypes.object),
   onMovieSelect: PropTypes.func.isRequired,
   promoInfo: PropTypes.object,
-  onMovieTitleClick: PropTypes.func.isRequired,
   currentScreen: PropTypes.string.isRequired,
   selectedMovie: PropTypes.oneOfType([
     PropTypes.object,
