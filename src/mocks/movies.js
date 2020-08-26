@@ -148,4 +148,7 @@ for (let i = 0; i < MOVIES_COUNT; i++) {
 export {
   moviesData,
   promoInfo,
+  reviews,
+  getRandomArraysItem,
+  levels,
 };
