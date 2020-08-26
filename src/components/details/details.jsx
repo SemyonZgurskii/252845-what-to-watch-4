@@ -56,7 +56,7 @@ Details.propTypes = {
       director: PropTypes.string.isRequired,
       stars: PropTypes.arrayOf(PropTypes.string),
     }),
-    runTime: PropTypes.string.isRequired,
+    runTime: PropTypes.number.isRequired,
   }),
 };
 
