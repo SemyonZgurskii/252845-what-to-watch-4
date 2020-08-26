@@ -11,12 +11,14 @@ function MoviesList(props) {
   return (
     <>
       <div className="catalog__movies-list">
-        {filteredMoviesData.map((movieData, index) => {
+        {filteredMoviesData.map((movieData) => {
+          const {id} = movieData;
+
           return (
             <MovieCardWrapped
               movieData={movieData}
               onCardClick={onCardClick}
-              key={movieData.title + index}
+              key={id}
             />
           );
         })}
