@@ -89,6 +89,7 @@ function reducer(state = initialState, action) {
     case ActionType.LOAD_MOVIES:
       return Object.assign({}, state, {
         moviesData: action.payload,
+        filteredMoviesData: action.payload,
       });
   }
 
