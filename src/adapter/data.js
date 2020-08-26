@@ -1,30 +1,30 @@
 import {getRandomArraysItem, levels, reviews} from '../mocks/movies.js';
 
-function convertData(movieData) {
+function convertData(originalData) {
   return {
-    title: movieData.name,
-    genre: movieData.genre,
-    backgroundColor: movieData.background_color,
-    video: movieData.video_link,
-    id: movieData.id,
-    isFavorite: movieData.is_favorite,
-    releaseDate: movieData.released,
-    preview: movieData.preview_video_link,
-    runTime: movieData.run_time,
+    title: originalData.name,
+    genre: originalData.genre,
+    backgroundColor: originalData.background_color,
+    video: originalData.video_link,
+    id: originalData.id,
+    isFavorite: originalData.is_favorite,
+    releaseDate: originalData.released,
+    preview: originalData.preview_video_link,
+    runTime: originalData.run_time,
     images: {
-      card: movieData.preview_image,
-      smallPoster: movieData.poster_image,
-      bigPoster: movieData.background_image,
+      card: originalData.preview_image,
+      smallPoster: originalData.poster_image,
+      bigPoster: originalData.background_image,
     },
     rating: {
-      score: movieData.rating,
+      score: originalData.rating,
       level: getRandomArraysItem(levels),
-      count: movieData.scores_count,
+      count: originalData.scores_count,
     },
     info: {
-      description: movieData.description,
-      director: movieData.director,
-      stars: movieData.starring,
+      description: originalData.description,
+      director: originalData.director,
+      stars: originalData.starring,
     },
     reviews,
   };
