@@ -36,7 +36,7 @@ function withShowMoreButton(Component) {
     }
 
     componentDidUpdate(prevProps) {
-      if (prevProps.filteredMoviesData !== this.props.filteredMoviesData) {
+      if (prevProps.filteredMoviesData.length !== this.props.filteredMoviesData.length) {
         this.setState({
           showedMoviesCount: getShowedMoviesCount(0, this.props.filteredMoviesData.length),
         });
