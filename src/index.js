@@ -6,11 +6,14 @@ import {createAPI} from './api.js';
 import {promoInfo} from './mocks/movies.js';
 import {createStore, applyMiddleware, compose} from 'redux';
 import {Provider} from 'react-redux';
-import {reducer, ActionCreator, Operation, AuthorizationStatus} from './reducer.js';
+import reducer from './reducer/reducer.js';
+import {Operation as DataOperation} from './reducer/data/data.js';
+import {ActionCreator as UserOperation, AuthorizationStatus} from './reducer/user/user.js';
+
 import thunkMiddleware from 'redux-thunk';
 
 const onUnauthorized = () => {
-  store.dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.NO_AUTH));
+  store.dispatch(UserOperation.requireAuthorization(AuthorizationStatus.NO_AUTH));
 };
 
 const api = createAPI(onUnauthorized);
@@ -23,7 +26,7 @@ const store = createStore(
     )
 );
 
-store.dispatch(Operation.loadMovies());
+store.dispatch(DataOperation.loadMovies());
 
 ReactDOM.render(
     <Provider store={store}>

@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import Main from '../main/main.jsx';
 import MovieInfo from '../movie-info/movie-info.jsx';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import {ActionCreator} from '../../reducer.js';
+import {ActionCreator} from '../../reducer/app/app.js';
+import {getFilteredMovies, getMovies} from '../../reducer/data/selector.js';
 import {connect} from 'react-redux';
 import {ScreenMode} from '../../constants.js';
+import {getGenre, getSelectedMovie, getCurrentScreen} from '../../reducer/app/selector.js';
 
 class App extends PureComponent {
   _renderCurrentScreen() {
@@ -63,11 +65,11 @@ App.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  activeGenre: state.activeGenre,
-  filteredMoviesData: state.filteredMoviesData,
-  moviesData: state.moviesData,
-  selectedMovie: state.selectedMovie,
-  currentScreen: state.currentScreen,
+  activeGenre: getGenre(state),
+  filteredMoviesData: getFilteredMovies(state),
+  moviesData: getMovies(state),
+  selectedMovie: getSelectedMovie(state),
+  currentScreen: getCurrentScreen(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
