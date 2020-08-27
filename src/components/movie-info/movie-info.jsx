@@ -12,8 +12,6 @@ function MovieInfo(props) {
   const {title, images, genre, releaseDate} = movieData;
   const {bigPoster, smallPoster} = images;
 
-  const similarMovies = moviesData.filter((movie) => movie.genre === props.movieData.genre);
-
   return (
     <>
       <section className="movie-card movie-card--full">
@@ -83,16 +81,18 @@ function MovieInfo(props) {
       </section>
 
       <div className="page-content">
-        <section className="catalog catalog--like-this">
-          <h2 className="catalog__title">More like this</h2>
+        {moviesData.length > 0 && (
+          <section className="catalog catalog--like-this">
+            <h2 className="catalog__title">More like this</h2>
 
-          <MoviesList
-            onCardClick={onCardClick}
-            moviesData={similarMovies}
-            filteredMoviesData={filteredMoviesData}
-          />
+            <MoviesList
+              onCardClick={onCardClick}
+              moviesData={moviesData}
+              filteredMoviesData={filteredMoviesData}
+            />
 
-        </section>
+          </section>
+        )}
 
         <footer className="page-footer">
           <div className="logo">
