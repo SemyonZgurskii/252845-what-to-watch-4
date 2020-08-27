@@ -77,6 +77,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(ActionCreator.changeFilter(genre));
   },
   onMovieSelect(movieData) {
+    dispatch(ActionCreator.changeFilter(movieData.genre));
     dispatch(ActionCreator.changeScreen(movieData));
   }
 });
