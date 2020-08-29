@@ -5,6 +5,7 @@ import MovieInfo from '../movie-info/movie-info.jsx';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import {ActionCreator} from '../../reducer/app/app.js';
 import {getFilteredMovies, getMovies} from '../../reducer/data/selector.js';
+import {getAuthorizationStatus} from '../../reducer/user/selector.js';
 import {connect} from 'react-redux';
 import {ScreenMode} from '../../constants.js';
 import {getGenre, getSelectedMovie, getCurrentScreen} from '../../reducer/app/selector.js';
@@ -70,6 +71,7 @@ const mapStateToProps = (state) => ({
   moviesData: getMovies(state),
   selectedMovie: getSelectedMovie(state),
   currentScreen: getCurrentScreen(state),
+  authorizationStatus: getAuthorizationStatus(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
