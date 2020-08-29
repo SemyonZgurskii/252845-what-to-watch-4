@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import MoviesList from '../movies-list/movies-list.jsx';
 import GenreFilter from '../genre-filter/genre-filter.jsx';
 import withShowMoreButton from '../../hocs/with-show-more-button/with-show-more-button.jsx';
+import {AuthorizationStatus} from '../../reducer/user/user.js';
 
 const MoviesListWrapped = withShowMoreButton(MoviesList);
 
 function Main(props) {
   const {title, genre, releaseDate} = props.promoInfo;
-  const {activeGenre, onFilterChange, moviesData} = props;
+  const {activeGenre, onFilterChange, moviesData, authorizationStatus} = props;
 
   return (
     <>
@@ -29,9 +30,13 @@ function Main(props) {
           </div>
 
           <div className="user-block">
-            <div className="user-block__avatar">
-              <img src="img/avatar.jpg" alt="User avatar" width="63" height="63" />
-            </div>
+            {authorizationStatus === AuthorizationStatus.NO_AUTH &&
+              <a href="sign-in.html" className="user-block__link">Sign in</a>}
+
+            {authorizationStatus === AuthorizationStatus.AUTH &&
+              <div className="user-block__avatar">
+                <img src="img/avatar.jpg" alt="User avatar" width="63" height="63" />
+              </div>}
           </div>
         </header>
 
@@ -110,6 +115,7 @@ Main.propTypes = {
   activeGenre: PropTypes.string.isRequired,
   onFilterChange: PropTypes.func.isRequired,
   moviesData: PropTypes.array.isRequired,
+  authorizationStatus: PropTypes.string.isRequired,
 };
 
 export default Main;
