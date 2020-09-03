@@ -17,4 +17,5 @@ export const Genre = {
 export const ScreenMode = {
   MAIN: `main`,
   OVERVIEW: `overview`,
+  AUTH: `auth`,
 };

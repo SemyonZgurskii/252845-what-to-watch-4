@@ -9,6 +9,7 @@ const initialState = {
 const ActionType = {
   CHANGE_FILTER: `CHANGE_FILTER`,
   CHANGE_SCREEN: `CHANGE_SCREEN`,
+  SELECT_MOVIE: `SELECT_MOVIE`,
 };
 
 const ActionCreator = {
@@ -17,10 +18,15 @@ const ActionCreator = {
     payload: genre,
   }),
 
-  changeScreen: (movieData) => ({
+  changeScreen: (screenMode) => ({
     type: ActionType.CHANGE_SCREEN,
-    payload: movieData,
+    payload: screenMode,
   }),
+
+  selectMovie: (movieData) => ({
+    type: ActionType.SELECT_MOVIE,
+    payload: movieData,
+  })
 };
 
 function reducer(state = initialState, action) {
@@ -32,8 +38,13 @@ function reducer(state = initialState, action) {
 
     case ActionType.CHANGE_SCREEN:
       return Object.assign({}, state, {
-        selectedMovie: action.payload,
+        // selectedMovie: action.payload,
         currentScreen: ScreenMode.OVERVIEW,
+      });
+
+    case ActionType.SELECT_MOVIE:
+      return Object.assign({}, state, {
+        selectedMovie: action.payload,
       });
   }
 
