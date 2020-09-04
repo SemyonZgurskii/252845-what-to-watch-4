@@ -1,4 +1,4 @@
-import {Genre, ScreenMode, MAX_OVERVIEW_MOVIES} from '../../constants.js';
+import {Genre, ScreenMode} from '../../constants.js';
 
 const initialState = {
   activeGenre: Genre.ALL,

@@ -10,10 +10,11 @@ import {getAuthorizationStatus} from '../../reducer/user/selector.js';
 import {connect} from 'react-redux';
 import {ScreenMode} from '../../constants.js';
 import {getGenre, getSelectedMovie, getCurrentScreen} from '../../reducer/app/selector.js';
+import {Operation} from '../../reducer/user/user.js';
 
 class App extends PureComponent {
   _renderCurrentScreen() {
-    const {currentScreen, selectedMovie, onMovieSelect} = this.props;
+    const {currentScreen, selectedMovie, onMovieSelect, login} = this.props;
 
     if (currentScreen === ScreenMode.OVERVIEW) {
       return (
@@ -25,7 +26,9 @@ class App extends PureComponent {
       );
     } else if (currentScreen === ScreenMode.AUTH) {
       return (
-        <SignIn/>
+        <SignIn
+          login={login}
+        />
       );
     }
 
@@ -68,6 +71,7 @@ App.propTypes = {
     PropTypes.object,
     PropTypes.instanceOf(null)
   ]),
+  login: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -89,8 +93,10 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(ActionCreator.changeScreen(ScreenMode.OVERVIEW));
   },
   onSignInClick() {
-    console.log(`aoseunth`);
     dispatch(ActionCreator.changeScreen(ScreenMode.AUTH));
+  },
+  login(authData) {
+    dispatch(Operation.login(authData));
   }
 });
 

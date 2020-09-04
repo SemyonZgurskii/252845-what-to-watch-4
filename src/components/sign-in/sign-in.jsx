@@ -1,23 +1,27 @@
 import React, {PureComponent, createRef} from 'react';
+import PropTypes from 'prop-types';
 
+// TODO: реализовать выход из окна авторизации
 class SignIn extends PureComponent {
-  // constructor(props) {
-  //   super(props);
+  constructor(props) {
+    super(props);
 
-  //   const emailInputRef = createRef();
-  //   const passwordInputRef = createRef();
-  // }
+    this._emailInputRef = createRef();
+    this._passwordInputRef = createRef();
 
-  // _handleSubmit(evt) {
-  //   const {onSubmit} = this.props;
+    this._handleSubmit = this._handleSubmit.bind(this);
+  }
 
-  //   evt.preventDefault();
+  _handleSubmit(evt) {
+    const {login} = this.props;
 
-  //   onSubmit({
-  //     email: this.emailInputRef.current.value,
-  //     password: this.passwordInputRef.current.value,
-  //   });
-  // }
+    evt.preventDefault();
+
+    login({
+      email: this._emailInputRef.current.value,
+      password: this._passwordInputRef.current.value,
+    });
+  }
 
   render() {
     return (
@@ -36,18 +40,18 @@ class SignIn extends PureComponent {
 
         <div className="sign-in user-page__content">
           <form action="#" className="sign-in__form"
-            // onSubmit={this._handleSubmit}
+            onSubmit={this._handleSubmit}
           >
             <div className="sign-in__fields">
               <div className="sign-in__field">
                 <input className="sign-in__input" type="email" placeholder="Email address" name="user-email" id="user-email"
-                  // ref={this.emailInputRef}
+                  ref={this._emailInputRef}
                 />
                 <label className="sign-in__label visually-hidden" htmlFor="user-email">Email address</label>
               </div>
               <div className="sign-in__field">
                 <input className="sign-in__input" type="password" placeholder="Password" name="user-password" id="user-password"
-                  // ref={this.passwordInputRef}
+                  ref={this._passwordInputRef}
                 />
                 <label className="sign-in__label visually-hidden" htmlFor="user-password">Password</label>
               </div>
@@ -75,5 +79,9 @@ class SignIn extends PureComponent {
     );
   }
 }
+
+SignIn.propTypes = {
+  login: PropTypes.func.isRequired,
+};
 
 export default SignIn;
