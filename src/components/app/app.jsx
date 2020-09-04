@@ -2,6 +2,7 @@ import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import Main from '../main/main.jsx';
 import MovieInfo from '../movie-info/movie-info.jsx';
+import SignIn from '../sign-in/sign-in.jsx';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import {ActionCreator} from '../../reducer/app/app.js';
 import {getFilteredMovies, getMovies} from '../../reducer/data/selector.js';
@@ -21,6 +22,10 @@ class App extends PureComponent {
           movieData={selectedMovie}
           onCardClick={onMovieSelect}
         />
+      );
+    } else if (currentScreen === ScreenMode.AUTH) {
+      return (
+        <SignIn/>
       );
     }
 
@@ -80,7 +85,12 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onMovieSelect(movieData) {
     dispatch(ActionCreator.changeFilter(movieData.genre));
-    dispatch(ActionCreator.changeScreen(movieData));
+    dispatch(ActionCreator.selectMovie(movieData));
+    dispatch(ActionCreator.changeScreen(ScreenMode.OVERVIEW));
+  },
+  onSignInClick() {
+    console.log(`aoseunth`);
+    dispatch(ActionCreator.changeScreen(ScreenMode.AUTH));
   }
 });
 

@@ -9,7 +9,7 @@ const MoviesListWrapped = withShowMoreButton(MoviesList);
 
 function Main(props) {
   const {title, genre, releaseDate} = props.promoInfo;
-  const {activeGenre, onFilterChange, moviesData, authorizationStatus} = props;
+  const {activeGenre, onFilterChange, moviesData, authorizationStatus, onSignInClick} = props;
 
   return (
     <>
@@ -31,7 +31,9 @@ function Main(props) {
 
           <div className="user-block">
             {authorizationStatus === AuthorizationStatus.NO_AUTH &&
-              <a href="sign-in.html" className="user-block__link">Sign in</a>}
+              <a href="#" className="user-block__link"
+                onClick={onSignInClick}
+              >Sign in</a>}
 
             {authorizationStatus === AuthorizationStatus.AUTH &&
               <div className="user-block__avatar">
@@ -116,6 +118,7 @@ Main.propTypes = {
   onFilterChange: PropTypes.func.isRequired,
   moviesData: PropTypes.array.isRequired,
   authorizationStatus: PropTypes.string.isRequired,
+  onSignInClick: PropTypes.func.isRequired,
 };
 
 export default Main;

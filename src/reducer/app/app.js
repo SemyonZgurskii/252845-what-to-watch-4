@@ -38,8 +38,7 @@ function reducer(state = initialState, action) {
 
     case ActionType.CHANGE_SCREEN:
       return Object.assign({}, state, {
-        // selectedMovie: action.payload,
-        currentScreen: ScreenMode.OVERVIEW,
+        currentScreen: action.payload,
       });
 
     case ActionType.SELECT_MOVIE:
