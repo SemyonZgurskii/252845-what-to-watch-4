@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Main from '../main/main.jsx';
 import MovieInfo from '../movie-info/movie-info.jsx';
 import SignIn from '../sign-in/sign-in.jsx';
+import AddReview from '../add-review/add-review.jsx';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import {ActionCreator} from '../../reducer/app/app.js';
 import {getFilteredMovies, getMovies} from '../../reducer/data/selector.js';
@@ -15,22 +16,6 @@ import {Operation} from '../../reducer/user/user.js';
 class App extends PureComponent {
   _renderCurrentScreen() {
     const {currentScreen, selectedMovie, onMovieSelect, login} = this.props;
-
-    // if (currentScreen === ScreenMode.OVERVIEW) {
-    //   return (
-    //     <MovieInfo
-    //       {...this.props}
-    //       movieData={selectedMovie}
-    //       onCardClick={onMovieSelect}
-    //     />
-    //   );
-    // } else if (currentScreen === ScreenMode.AUTH) {
-    //   return (
-    //     <SignIn
-    //       login={login}
-    //     />
-    //   );
-    // }
 
     switch (currentScreen) {
       case (ScreenMode.OVERVIEW):
@@ -45,6 +30,13 @@ class App extends PureComponent {
         return (
           <SignIn
             login={login}
+          />
+        );
+      case (ScreenMode.ADD_REVIEW):
+        return (
+          <AddReview
+            movieData={selectedMovie}
+            onAddReviewSubmit={() => {}}
           />
         );
     }
@@ -114,7 +106,11 @@ const mapDispatchToProps = (dispatch) => ({
   },
   login(authData) {
     dispatch(Operation.login(authData));
+  },
+  onAddReviewButtonClick() {
+    dispatch(ActionCreator.changeScreen(ScreenMode.ADD_REVIEW));
   }
+  // TODO: доделать onAddReviewSubmit(movie)
 });
 
 export {App};
