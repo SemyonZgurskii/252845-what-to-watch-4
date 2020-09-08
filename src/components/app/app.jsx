@@ -16,20 +16,37 @@ class App extends PureComponent {
   _renderCurrentScreen() {
     const {currentScreen, selectedMovie, onMovieSelect, login} = this.props;
 
-    if (currentScreen === ScreenMode.OVERVIEW) {
-      return (
-        <MovieInfo
-          {...this.props}
-          movieData={selectedMovie}
-          onCardClick={onMovieSelect}
-        />
-      );
-    } else if (currentScreen === ScreenMode.AUTH) {
-      return (
-        <SignIn
-          login={login}
-        />
-      );
+    // if (currentScreen === ScreenMode.OVERVIEW) {
+    //   return (
+    //     <MovieInfo
+    //       {...this.props}
+    //       movieData={selectedMovie}
+    //       onCardClick={onMovieSelect}
+    //     />
+    //   );
+    // } else if (currentScreen === ScreenMode.AUTH) {
+    //   return (
+    //     <SignIn
+    //       login={login}
+    //     />
+    //   );
+    // }
+
+    switch (currentScreen) {
+      case (ScreenMode.OVERVIEW):
+        return (
+          <MovieInfo
+            {...this.props}
+            movieData={selectedMovie}
+            onCardClick={onMovieSelect}
+          />
+        );
+      case (ScreenMode.AUTH):
+        return (
+          <SignIn
+            login={login}
+          />
+        );
     }
 
     return (
