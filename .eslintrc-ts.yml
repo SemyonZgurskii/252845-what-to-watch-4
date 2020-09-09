@@ -1,0 +1,7 @@
+extends: ['./.eslint.yml', 'plugin:@typescript-eslint/recommended']
+
+parser: '@typescript-eslint/paresr'
+
+rules:
+  '@typescript-eslint/explicit-function-return-type': 'off'
+  '@typescript-eslint/no-use-before-define': 'off'
