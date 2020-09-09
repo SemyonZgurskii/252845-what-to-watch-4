@@ -4,14 +4,15 @@ import Main from '../main/main.jsx';
 import MovieInfo from '../movie-info/movie-info.jsx';
 import SignIn from '../sign-in/sign-in.jsx';
 import AddReview from '../add-review/add-review.jsx';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import {Router, Switch, Route} from 'react-router-dom';
 import {ActionCreator} from '../../reducer/app/app.js';
 import {getFilteredMovies, getMovies} from '../../reducer/data/selector.js';
 import {getAuthorizationStatus} from '../../reducer/user/selector.js';
 import {connect} from 'react-redux';
-import {ScreenMode} from '../../constants.js';
+import {ScreenMode, AppRoute} from '../../constants.js';
 import {getGenre, getSelectedMovie, getCurrentScreen} from '../../reducer/app/selector.js';
 import {Operation} from '../../reducer/user/user.js';
+import history from '../../history.js';
 
 class App extends PureComponent {
   _renderCurrentScreen() {
@@ -27,11 +28,7 @@ class App extends PureComponent {
           />
         );
       case (ScreenMode.AUTH):
-        return (
-          <SignIn
-            login={login}
-          />
-        );
+        return history.push(AppRoute.LOGIN);
       case (ScreenMode.ADD_REVIEW):
         return (
           <AddReview
@@ -50,13 +47,20 @@ class App extends PureComponent {
   }
 
   render() {
-    const {moviesData, onMovieSelect} = this.props;
+    const {moviesData, onMovieSelect, login} = this.props;
 
     return (
-      <BrowserRouter>
+      <Router
+        history={history}
+      >
         <Switch>
-          <Route exact path="/">
+          <Route exact path={AppRoute.MAIN}>
             {this._renderCurrentScreen()}
+          </Route>
+          <Route exact path={AppRoute.LOGIN}>
+            <SignIn
+              login={login}
+            />
           </Route>
           <Route exact path="/movie-info">
             <MovieInfo
@@ -66,7 +70,7 @@ class App extends PureComponent {
             />
           </Route>
         </Switch>
-      </BrowserRouter>
+      </Router>
     );
   }
 }

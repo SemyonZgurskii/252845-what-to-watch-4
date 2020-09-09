@@ -18,4 +18,10 @@ export const ScreenMode = {
   MAIN: `main`,
   OVERVIEW: `overview`,
   AUTH: `auth`,
+  ADD_REVIEW: `add review`,
+};
+
+export const AppRoute = {
+  LOGIN: `/login`,
+  MAIN: `/`,
 };
