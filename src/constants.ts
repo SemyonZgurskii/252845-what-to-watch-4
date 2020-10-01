@@ -1,7 +1,9 @@
-export const MAX_FILTERS = 9;
-export const MAX_OVERVIEW_MOVIES = 4;
+export const MAX_FILTERS: number = 9;
+export const MAX_OVERVIEW_MOVIES: number = 4;
 
-export const Genre = {
+export const Genre: {
+  [key: string]: string;
+} = {
   ALL: `All genres`,
   COMEDIES: `Comedies`,
   CRIME: `Crime`,
@@ -14,14 +16,19 @@ export const Genre = {
   THRILLERS: `Thrillers`,
 };
 
-export const ScreenMode = {
+export const ScreenMode: {
+  [key: string]: string;
+} = {
   MAIN: `main`,
   OVERVIEW: `overview`,
   AUTH: `auth`,
   ADD_REVIEW: `add review`,
 };
 
-export const AppRoute = {
+export const AppRoute: {
+  [key: string]: string;
+} = {
   LOGIN: `/login`,
+  INFO: `/info`,
   MAIN: `/`,
 };
