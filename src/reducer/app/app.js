@@ -1,4 +1,4 @@
-import {Genre, ScreenMode} from '../../constants.js';
+import {Genre, ScreenMode} from '../../constants.ts';
 
 const initialState = {
   activeGenre: Genre.ALL,

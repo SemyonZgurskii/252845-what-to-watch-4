@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {MAX_FILTERS, Genre} from '../../constants.js';
+import {MAX_FILTERS, Genre} from '../../constants.ts';
 
 const ACTIVE_CLASS = `catalog__genres-item--active`;
 

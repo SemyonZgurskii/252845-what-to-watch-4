@@ -1,4 +1,4 @@
-import {Genre} from '../constants.js';
+import {Genre} from '../constants.ts';
 
 const MOVIES_COUNT = 16;
 const MIN_DATE = 1990;

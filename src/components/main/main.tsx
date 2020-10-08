@@ -1,15 +1,42 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import {Link} from 'react-router-dom';
+import {AppRoute} from '../../constants.ts';
 import MoviesList from '../movies-list/movies-list.jsx';
 import GenreFilter from '../genre-filter/genre-filter.jsx';
 import withShowMoreButton from '../../hocs/with-show-more-button/with-show-more-button.jsx';
 import {AuthorizationStatus} from '../../reducer/user/user.js';
+import {MovieData} from '../../types.ts';
+
+// Main.propTypes = {
+//   promoInfo: PropTypes.shape({
+//     title: PropTypes.string.isRequired,
+//     genre: PropTypes.string.isRequired,
+//     releaseDate: PropTypes.number.isRequired,
+//   }),
+//   activeGenre: PropTypes.string.isRequired,
+//   onFilterChange: PropTypes.func.isRequired,
+//   moviesData: PropTypes.array.isRequired,
+//   authorizationStatus: PropTypes.string.isRequired,
+//   onSignInClick: PropTypes.func.isRequired,
+// };
+interface Props {
+  promoInfo: {
+    title: string,
+    genre: string,
+    releaseDate: number,
+  },
+  activeGenre: string,
+  onFilterChange: () => void,
+  moviesData: MovieData[],
+  authorizationStatus: string,
+}
 
 const MoviesListWrapped = withShowMoreButton(MoviesList);
 
-function Main(props) {
+function Main(props: Props): React.ReactElement {
   const {title, genre, releaseDate} = props.promoInfo;
-  const {activeGenre, onFilterChange, moviesData, authorizationStatus, onSignInClick} = props;
+  const {activeGenre, onFilterChange, moviesData, authorizationStatus} = props;
+  // const {title, genre, releaseDate} = moviesData[0];
 
   return (
     <>
@@ -22,18 +49,22 @@ function Main(props) {
 
         <header className="page-header movie-card__head">
           <div className="logo">
-            <a className="logo__link">
+            <Link
+              to={AppRoute.MAIN}
+              className="logo__link"
+            >
               <span className="logo__letter logo__letter--1">W</span>
               <span className="logo__letter logo__letter--2">T</span>
               <span className="logo__letter logo__letter--3">W</span>
-            </a>
+            </Link>
           </div>
 
           <div className="user-block">
             {authorizationStatus === AuthorizationStatus.NO_AUTH &&
-              <a href="#" className="user-block__link"
-                onClick={onSignInClick}
-              >Sign in</a>}
+              <Link
+                className="user-block__link"
+                to={AppRoute.LOGIN}
+              >Sign in</Link>}
 
             {authorizationStatus === AuthorizationStatus.AUTH &&
               <div className="user-block__avatar">
@@ -92,11 +123,14 @@ function Main(props) {
 
         <footer className="page-footer">
           <div className="logo">
-            <a className="logo__link logo__link--light">
+            <Link
+              className="logo__link logo__link--light"
+              to={AppRoute.MAIN}
+            >
               <span className="logo__letter logo__letter--1">W</span>
               <span className="logo__letter logo__letter--2">T</span>
               <span className="logo__letter logo__letter--3">W</span>
-            </a>
+            </Link>
           </div>
 
           <div className="copyright">
@@ -107,18 +141,5 @@ function Main(props) {
     </>
   );
 }
-
-Main.propTypes = {
-  promoInfo: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-    releaseDate: PropTypes.number.isRequired,
-  }),
-  activeGenre: PropTypes.string.isRequired,
-  onFilterChange: PropTypes.func.isRequired,
-  moviesData: PropTypes.array.isRequired,
-  authorizationStatus: PropTypes.string.isRequired,
-  onSignInClick: PropTypes.func.isRequired,
-};
 
 export default Main;

@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import history from "../../history.js";
+import {AppRoute} from "../../constants";
 
 function MovieCard(props) {
   const {movieData, onMouseEnter, onCardClick, onMouseOut, children} = props;
@@ -11,7 +13,10 @@ function MovieCard(props) {
       onMouseOut={onMouseOut}
     >
       <div className="small-movie-card__image"
-        onClick = {() => onCardClick(movieData)}
+        onClick = {() => {
+          onCardClick(movieData)
+          history.push(AppRoute.INFO)
+        }}
       >
         {children}
       </div>
@@ -20,7 +25,8 @@ function MovieCard(props) {
           className="small-movie-card__link"
           href="movie-page.html"
           onClick={() => {
-            onCardClick(movieData);
+            onCardClick(movieData)
+            history.push(AppRoute.INFO)
           }}
         >{title}</a>
       </h3>

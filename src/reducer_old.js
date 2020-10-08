@@ -1,4 +1,4 @@
-import {Genre, ScreenMode, MAX_OVERVIEW_MOVIES} from './constants.js';
+import {Genre, ScreenMode, MAX_OVERVIEW_MOVIES} from './constants.ts';
 import {convertData} from './adapter/data.js';
 
 const AuthorizationStatus = {

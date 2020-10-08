@@ -1,10 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Main from './main.jsx';
+import Main from './main.tsx';
 
 import {promoInfo} from '../../mocks/movies.js';
 import {testMoviesData} from '../../mocks/testMovies.js';
-import {Genre} from '../../constants.js';
+import {Genre} from '../../constants.ts';
 
 describe(`Create Main snapshot`, () => {
   it(`Should correctly render Main`, () => {

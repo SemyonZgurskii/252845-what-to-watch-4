@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Main from '../main/main.jsx';
+import Main from '../main/main.tsx';
 import MovieInfo from '../movie-info/movie-info.jsx';
 import SignIn from '../sign-in/sign-in.jsx';
 import AddReview from '../add-review/add-review.jsx';
@@ -8,7 +8,7 @@ import {ActionCreator} from '../../reducer/app/app.js';
 import {getFilteredMovies, getMovies} from '../../reducer/data/selector.js';
 import {getAuthorizationStatus} from '../../reducer/user/selector.js';
 import {connect} from 'react-redux';
-import {ScreenMode, AppRoute} from '../../constants.js';
+import {ScreenMode, AppRoute} from '../../constants.ts';
 import {getGenre, getSelectedMovie, getCurrentScreen} from '../../reducer/app/selector.js';
 import {Operation} from '../../reducer/user/user.js';
 import history from '../../history.js';
@@ -22,36 +22,38 @@ interface Props {
 }
 
 class App extends React.PureComponent<Props, {}> {
-  _renderCurrentScreen() {
-    const {currentScreen, selectedMovie, onMovieSelect} = this.props;
-
-    switch (currentScreen) {
-      case (ScreenMode.OVERVIEW):
-        return (
-          <MovieInfo
-            {...this.props}
-            movieData={selectedMovie}
-            onCardClick={onMovieSelect}
-          />
-        );
-      case (ScreenMode.AUTH):
-        return history.push(AppRoute.LOGIN);
-      case (ScreenMode.ADD_REVIEW):
-        return (
-          <AddReview
-            movieData={selectedMovie}
-            onAddReviewSubmit={() => {}}
-          />
-        );
-    }
-
-    return (
-      <Main
-        {...this.props}
-        onCardClick={onMovieSelect}
-      />
-    );
-  }
+  // _renderCurrentScreen() {
+  //   const {currentScreen, selectedMovie, onMovieSelect} = this.props;
+  //
+  //   switch (currentScreen) {
+  //     case (ScreenMode.OVERVIEW):
+  //       return (
+  //         history.push(AppRoute.INFO)
+  //       );
+  //     // case (ScreenMode.OVERVIEW):
+  //     //   return (
+  //     //     <MovieInfo
+  //     //       {...this.props}
+  //     //       movieData={selectedMovie}
+  //     //       onCardClick={onMovieSelect}
+  //     //     />
+  //     //   );
+  //     case (ScreenMode.ADD_REVIEW):
+  //       return (
+  //         <AddReview
+  //           movieData={selectedMovie}
+  //           onAddReviewSubmit={() => {}}
+  //         />
+  //       );
+  //   }
+  //
+  //   return (
+  //     <Main
+  //       {...this.props}
+  //       onCardClick={onMovieSelect}
+  //     />
+  //   );
+  // }
 
   render() {
     const {moviesData, onMovieSelect, login} = this.props;
@@ -62,14 +64,17 @@ class App extends React.PureComponent<Props, {}> {
       >
         <Switch>
           <Route exact path={AppRoute.MAIN}>
-            {this._renderCurrentScreen()}
+            <Main
+              {...this.props}
+              onCardClick={onMovieSelect}
+            />
           </Route>
           <Route exact path={AppRoute.LOGIN}>
             <SignIn
               login={login}
             />
           </Route>
-          <Route exact path="/movie-info">
+          <Route exact path={AppRoute.INFO}>
             <MovieInfo
               {...this.props}
               movieData={moviesData[0]}
@@ -99,9 +104,6 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(ActionCreator.changeFilter(movieData.genre));
     dispatch(ActionCreator.selectMovie(movieData));
     dispatch(ActionCreator.changeScreen(ScreenMode.OVERVIEW));
-  },
-  onSignInClick() {
-    dispatch(ActionCreator.changeScreen(ScreenMode.AUTH));
   },
   login(authData) {
     dispatch(Operation.login(authData));

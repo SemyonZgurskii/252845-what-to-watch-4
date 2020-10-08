@@ -1,10 +1,10 @@
 import React from 'react';
 import Enzyme, {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import Main from './main.jsx';
+import Main from './main.tsx';
 
 import {moviesData, promoInfo} from '../../mocks/movies.js';
-import {Genre} from '../../constants.js';
+import {Genre} from '../../constants.ts';
 
 Enzyme.configure({
   adapter: new Adapter(),

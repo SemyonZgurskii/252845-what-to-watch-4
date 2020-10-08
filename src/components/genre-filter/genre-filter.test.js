@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import GenreFilter from './genre-filter.jsx';
 
 import {testMoviesData} from '../../mocks/testMovies.js';
-import {Genre} from '../../constants.js';
+import {Genre} from '../../constants.ts';
 
 describe(`Create GenreFilter snapshot`, () => {
   it(`GenreFilter should render correctly`, () => {

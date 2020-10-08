@@ -1,5 +1,5 @@
 import {reducer, ActionCreator} from './reducer.js';
-import {Genre} from './constants.js';
+import {Genre} from './constants.ts';
 import {testMoviesData} from './mocks/testMovies.js';
 
 const testInitialState = {

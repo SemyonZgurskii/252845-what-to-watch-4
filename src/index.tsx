@@ -1,10 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 
-import App from './components/app/app.jsx';
+import App from './components/app/app.tsx';
 import {createAPI} from './api.js';
 import {promoInfo} from './mocks/movies.js';
 import {createStore, applyMiddleware, compose} from 'redux';
+import {composeWithDevTools} from 'redux-devtools-extension';
 import {Provider} from 'react-redux';
 import reducer from './reducer/reducer.js';
 import {Operation as DataOperation} from './reducer/data/data.js';
@@ -20,9 +21,8 @@ const api = createAPI(onUnauthorized);
 
 const store = createStore(
     reducer,
-    compose(
-        applyMiddleware(thunkMiddleware.withExtraArgument(api)),
-        window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : (f) => f
+    composeWithDevTools(
+        applyMiddleware(thunkMiddleware.withExtraArgument(api))
     )
 );
 

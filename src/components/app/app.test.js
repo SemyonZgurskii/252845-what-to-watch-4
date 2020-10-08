@@ -3,7 +3,7 @@ import renderer from "react-test-renderer";
 import {Provider} from 'react-redux';
 import configureStore from 'redux-mock-store';
 import App from './app.jsx';
-import {Genre} from '../../constants.js';
+import {Genre} from '../../constants.ts';
 
 import {promoInfo} from '../../mocks/movies.js';
 import {testMoviesData} from '../../mocks/testMovies.js';

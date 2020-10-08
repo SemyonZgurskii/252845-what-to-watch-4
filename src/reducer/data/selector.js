@@ -1,6 +1,6 @@
 import {createSelector} from 'reselect';
 import {getGenre, getCurrentScreen} from '../app/selector.js';
-import {Genre, ScreenMode, MAX_OVERVIEW_MOVIES} from '../../constants.js';
+import {Genre, ScreenMode, MAX_OVERVIEW_MOVIES} from '../../constants.ts';
 import NameSpace from '../name-space.js';
 
 const NAME_SPACE = NameSpace.DATA;
