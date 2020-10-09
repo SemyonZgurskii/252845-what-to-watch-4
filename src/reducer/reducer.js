@@ -9,5 +9,3 @@ export default combineReducers({
   [NameSpace.DATA]: data,
   [NameSpace.USER]: user,
 });
-
-// TODO: Не забудьте протестировать новую функциональность. Чтобы замокать axios установите дополнительный пакет axios-mock-adapter с помощью команды npm i axios-mock-adapter -DE.

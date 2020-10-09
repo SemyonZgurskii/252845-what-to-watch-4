@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
 import {AppRoute} from "../../constants.ts";
 
-// TODO: реализовать возможность выхода из окна авторизации
 class SignIn extends PureComponent {
   constructor(props) {
     super(props);
@@ -26,13 +25,16 @@ class SignIn extends PureComponent {
   }
 
   render() {
+    const {onHomePageClick} = this.props;
+
     return (
       <div className="user-page">
         <header className="page-header user-page__head">
           <div className="logo">
             <Link
               to={AppRoute.MAIN}
-              href="main.html" className="logo__link"
+              onClick={onHomePageClick}
+              className="logo__link"
             >
               <span className="logo__letter logo__letter--1">W</span>
               <span className="logo__letter logo__letter--2">T</span>

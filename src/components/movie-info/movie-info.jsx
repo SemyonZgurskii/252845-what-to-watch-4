@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 import Tabs from '../tabs/tabs.jsx';
 import MoviesList from '../movies-list/movies-list.jsx';
 import withActiveItem from '../../hocs/with-active-item/with-active-item.jsx';
+import {AppRoute} from "../../constants.ts";
 
 const TabsWrapped = withActiveItem(Tabs);
 
 function MovieInfo(props) {
-  const {moviesData, movieData, filteredMoviesData, onCardClick, onAddReviewButtonClick} = props;
+  const {moviesData, movieData, filteredMoviesData, onCardClick, onAddReviewButtonClick, onHomePageClick} = props;
   const {title, images, genre, releaseDate} = movieData;
   const {bigPoster, smallPoster} = images;
 
@@ -24,11 +26,14 @@ function MovieInfo(props) {
 
           <header className="page-header movie-card__head">
             <div className="logo">
-              <a href="main.html" className="logo__link">
+              <Link
+                to={AppRoute.MAIN}
+                onClick={onHomePageClick}
+                className="logo__link">
                 <span className="logo__letter logo__letter--1">W</span>
                 <span className="logo__letter logo__letter--2">T</span>
                 <span className="logo__letter logo__letter--3">W</span>
-              </a>
+              </Link>
             </div>
 
             <div className="user-block">

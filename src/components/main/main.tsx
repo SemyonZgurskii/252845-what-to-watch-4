@@ -7,18 +7,6 @@ import withShowMoreButton from '../../hocs/with-show-more-button/with-show-more-
 import {AuthorizationStatus} from '../../reducer/user/user.js';
 import {MovieData} from '../../types.ts';
 
-// Main.propTypes = {
-//   promoInfo: PropTypes.shape({
-//     title: PropTypes.string.isRequired,
-//     genre: PropTypes.string.isRequired,
-//     releaseDate: PropTypes.number.isRequired,
-//   }),
-//   activeGenre: PropTypes.string.isRequired,
-//   onFilterChange: PropTypes.func.isRequired,
-//   moviesData: PropTypes.array.isRequired,
-//   authorizationStatus: PropTypes.string.isRequired,
-//   onSignInClick: PropTypes.func.isRequired,
-// };
 interface Props {
   promoInfo: {
     title: string,
@@ -29,13 +17,14 @@ interface Props {
   onFilterChange: () => void,
   moviesData: MovieData[],
   authorizationStatus: string,
+  onHomePageClick: () => void,
 }
 
 const MoviesListWrapped = withShowMoreButton(MoviesList);
 
 function Main(props: Props): React.ReactElement {
   const {title, genre, releaseDate} = props.promoInfo;
-  const {activeGenre, onFilterChange, moviesData, authorizationStatus} = props;
+  const {activeGenre, onFilterChange, moviesData, authorizationStatus, onHomePageClick} = props;
   // const {title, genre, releaseDate} = moviesData[0];
 
   return (
@@ -51,6 +40,7 @@ function Main(props: Props): React.ReactElement {
           <div className="logo">
             <Link
               to={AppRoute.MAIN}
+              onClick={onHomePageClick}
               className="logo__link"
             >
               <span className="logo__letter logo__letter--1">W</span>

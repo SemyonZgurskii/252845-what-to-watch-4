@@ -8,7 +8,7 @@ import {ActionCreator} from '../../reducer/app/app.js';
 import {getFilteredMovies, getMovies} from '../../reducer/data/selector.js';
 import {getAuthorizationStatus} from '../../reducer/user/selector.js';
 import {connect} from 'react-redux';
-import {ScreenMode, AppRoute} from '../../constants.ts';
+import {ScreenMode, AppRoute, Genre} from '../../constants.ts';
 import {getGenre, getSelectedMovie, getCurrentScreen} from '../../reducer/app/selector.js';
 import {Operation} from '../../reducer/user/user.js';
 import history from '../../history.js';
@@ -56,7 +56,7 @@ class App extends React.PureComponent<Props, {}> {
   // }
 
   render() {
-    const {moviesData, onMovieSelect, login} = this.props;
+    const {selectedMovie, onMovieSelect, login} = this.props;
 
     return (
       <Router
@@ -77,7 +77,7 @@ class App extends React.PureComponent<Props, {}> {
           <Route exact path={AppRoute.INFO}>
             <MovieInfo
               {...this.props}
-              movieData={moviesData[0]}
+              movieData={selectedMovie}
               onCardClick={onMovieSelect}
             />
           </Route>
@@ -104,6 +104,10 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(ActionCreator.changeFilter(movieData.genre));
     dispatch(ActionCreator.selectMovie(movieData));
     dispatch(ActionCreator.changeScreen(ScreenMode.OVERVIEW));
+  },
+  onHomePageClick() {
+    dispatch(ActionCreator.changeFilter(Genre.ALL));
+    dispatch(ActionCreator.changeScreen(ScreenMode.MAIN));
   },
   login(authData) {
     dispatch(Operation.login(authData));
