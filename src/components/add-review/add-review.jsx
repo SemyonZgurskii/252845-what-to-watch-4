@@ -1,34 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
+import {AppRoute} from "../../constants.ts";
 
 // TODO: доделать после изучения React Router
 
 function Review(props) {
-  const {movieData, onAddReviewSubmit} = props;
-  const {smallPoster, title} = movieData;
+  const {movieData, onAddReviewSubmit, onHomePageClick} = props;
+  const {images: {bigPoster, smallPoster}, title} = movieData;
 
   return (
     <section className="movie-card movie-card--full">
       <div className="movie-card__header">
         <div className="movie-card__bg">
-          <img src={smallPoster} alt={title} />
+          <img src={bigPoster} alt={title + " big poster"} />
         </div>
 
         <h1 className="visually-hidden">WTW</h1>
 
         <header className="page-header">
           <div className="logo">
-            <a href="main.html" className="logo__link">
+            <Link
+              to={AppRoute.MAIN}
+              onClick={onHomePageClick}
+              className="logo__link"
+            >
               <span className="logo__letter logo__letter--1">W</span>
               <span className="logo__letter logo__letter--2">T</span>
               <span className="logo__letter logo__letter--3">W</span>
-            </a>
+            </Link>
           </div>
 
           <nav className="breadcrumbs">
             <ul className="breadcrumbs__list">
               <li className="breadcrumbs__item">
-                <a href="movie-page.html" className="breadcrumbs__link">The Grand Budapest Hotel</a>
+                <Link
+                  to={AppRoute.INFO}
+                  className="breadcrumbs__link"
+                >{title}</Link>
               </li>
               <li className="breadcrumbs__item">
                 <a className="breadcrumbs__link">Add review</a>
@@ -44,7 +53,7 @@ function Review(props) {
         </header>
 
         <div className="movie-card__poster movie-card__poster--small">
-          <img src="img/the-grand-budapest-hotel-poster.jpg" alt="The Grand Budapest Hotel poster" width="218" height="327" />
+          <img src={smallPoster} alt={title + " poster"} width="218" height="327" />
         </div>
       </div>
 
