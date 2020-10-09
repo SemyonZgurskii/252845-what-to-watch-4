@@ -1,7 +1,7 @@
 import React, {PureComponent, createRef} from 'react';
 import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
-import {AppRoute} from "../../constants";
+import {AppRoute} from "../../constants.ts";
 
 // TODO: реализовать возможность выхода из окна авторизации
 class SignIn extends PureComponent {

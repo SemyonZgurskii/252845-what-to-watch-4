@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import history from "../../history.js";
-import {AppRoute} from "../../constants";
+import {AppRoute} from "../../constants.ts";
 
 function MovieCard(props) {
   const {movieData, onMouseEnter, onCardClick, onMouseOut, children} = props;
