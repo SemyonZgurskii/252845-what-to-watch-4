@@ -28,6 +28,7 @@ export const ScreenMode: {
 export const AppRoute: {
   [key: string]: string;
 } = {
+  ADD_REVIEW: `/add-review`,
   LOGIN: `/login`,
   INFO: `/info`,
   MAIN: `/`,

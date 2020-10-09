@@ -22,22 +22,6 @@ interface Props {
 }
 
 class App extends React.PureComponent<Props, {}> {
-  // _renderCurrentScreen() {
-  //   const {currentScreen, selectedMovie, onMovieSelect} = this.props;
-  //
-  //   switch (currentScreen) {
-  //     case (ScreenMode.OVERVIEW):
-  //       return (
-  //         history.push(AppRoute.INFO)
-  //       );
-  //     // case (ScreenMode.OVERVIEW):
-  //     //   return (
-  //     //     <MovieInfo
-  //     //       {...this.props}
-  //     //       movieData={selectedMovie}
-  //     //       onCardClick={onMovieSelect}
-  //     //     />
-  //     //   );
   //     case (ScreenMode.ADD_REVIEW):
   //       return (
   //         <AddReview
@@ -46,14 +30,6 @@ class App extends React.PureComponent<Props, {}> {
   //         />
   //       );
   //   }
-  //
-  //   return (
-  //     <Main
-  //       {...this.props}
-  //       onCardClick={onMovieSelect}
-  //     />
-  //   );
-  // }
 
   render() {
     const {selectedMovie, onMovieSelect, login} = this.props;
@@ -79,6 +55,12 @@ class App extends React.PureComponent<Props, {}> {
               {...this.props}
               movieData={selectedMovie}
               onCardClick={onMovieSelect}
+            />
+          </Route>
+          <Route exact path={AppRoute.ADD_REVIEW}>
+            <AddReview
+              // onAddReviewSubmit={}
+              movieData={selectedMovie}
             />
           </Route>
         </Switch>

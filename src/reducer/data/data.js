@@ -1,7 +1,5 @@
 import {convertData} from '../../adapter/data.js';
 
-// TODO: настроить сброс фильтрации после выбора конкретного фильма
-
 const initialState = {
   moviesData: [],
 };
